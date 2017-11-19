@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  TabBarViewController.h
 //  ELEC2660 Project
 //
 //  Created by Johnny Mitchell on 19/11/2017.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface TabBarViewController : UITabBarController <UITabBarControllerDelegate>
 
 @end
-

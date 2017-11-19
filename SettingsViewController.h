@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  Settings.h
 //  ELEC2660 Project
 //
 //  Created by Johnny Mitchell on 19/11/2017.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface SettingsViewController : UIViewController
 
 @end
-

@@ -6,13 +6,13 @@
 //  Copyright © 2017 Johnny Mitchell. All rights reserved.
 //
 
-#import "FirstViewController.h"
+#import "PianoViewController.h"
 
-@interface FirstViewController ()
+@interface PianoViewController ()
 
 @end
 
-@implementation FirstViewController
+@implementation PianoViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

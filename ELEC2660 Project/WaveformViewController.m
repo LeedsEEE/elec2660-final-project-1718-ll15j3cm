@@ -6,13 +6,13 @@
 //  Copyright © 2017 Johnny Mitchell. All rights reserved.
 //
 
-#import "SecondViewController.h"
+#import "WaveformViewController.h"
 
-@interface SecondViewController ()
+@interface WaveformViewController ()
 
 @end
 
-@implementation SecondViewController
+@implementation WaveformViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
