@@ -1,0 +1,542 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1AC12FA41FC7535200C67609 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA31FC7535200C67609 /* main.m */; };
+		1AC12FA71FC7535200C67609 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA61FC7535200C67609 /* AppDelegate.m */; };
+		1AC12FAA1FC7535200C67609 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA91FC7535200C67609 /* MainMenuViewController.m */; };
+		1AC12FAD1FC7535200C67609 /* LevelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FAC1FC7535200C67609 /* LevelViewController.m */; };
+		1AC12FB01FC7535200C67609 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC12FAE1FC7535200C67609 /* Main.storyboard */; };
+		1AC12FB21FC7535200C67609 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC12FB11FC7535200C67609 /* Assets.xcassets */; };
+		1AC12FB51FC7535200C67609 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AC12FB31FC7535200C67609 /* LaunchScreen.storyboard */; };
+		1AC12FC01FC7535200C67609 /* ELEC2660_Logic_GameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FBF1FC7535200C67609 /* ELEC2660_Logic_GameTests.m */; };
+		1AC12FCB1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FCA1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m */; };
+		1AC12FDA1FC7697100C67609 /* LevelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FD91FC7697100C67609 /* LevelTableViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AC12FBC1FC7535200C67609 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AC12F971FC7535200C67609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC12F9E1FC7535200C67609;
+			remoteInfo = "ELEC2660 Logic Game";
+		};
+		1AC12FC71FC7535200C67609 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1AC12F971FC7535200C67609 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1AC12F9E1FC7535200C67609;
+			remoteInfo = "ELEC2660 Logic Game";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1AC12F9F1FC7535200C67609 /* ELEC2660 Logic Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC2660 Logic Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC12FA31FC7535200C67609 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1AC12FA51FC7535200C67609 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1AC12FA61FC7535200C67609 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1AC12FA81FC7535200C67609 /* MainMenuViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		1AC12FA91FC7535200C67609 /* MainMenuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		1AC12FAB1FC7535200C67609 /* LevelViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelViewController.h; sourceTree = "<group>"; };
+		1AC12FAC1FC7535200C67609 /* LevelViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LevelViewController.m; sourceTree = "<group>"; };
+		1AC12FAF1FC7535200C67609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1AC12FB11FC7535200C67609 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1AC12FB41FC7535200C67609 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1AC12FB61FC7535200C67609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AC12FBB1FC7535200C67609 /* ELEC2660 Logic GameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELEC2660 Logic GameTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC12FBF1FC7535200C67609 /* ELEC2660_Logic_GameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELEC2660_Logic_GameTests.m; sourceTree = "<group>"; };
+		1AC12FC11FC7535200C67609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AC12FC61FC7535200C67609 /* ELEC2660 Logic GameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ELEC2660 Logic GameUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1AC12FCA1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ELEC2660_Logic_GameUITests.m; sourceTree = "<group>"; };
+		1AC12FCC1FC7535200C67609 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AC12FD81FC7697100C67609 /* LevelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTableViewController.h; sourceTree = "<group>"; };
+		1AC12FD91FC7697100C67609 /* LevelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTableViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1AC12F9C1FC7535200C67609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FB81FC7535200C67609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FC31FC7535200C67609 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1AC12F961FC7535200C67609 = {
+			isa = PBXGroup;
+			children = (
+				1AC12FA11FC7535200C67609 /* ELEC2660 Logic Game */,
+				1AC12FBE1FC7535200C67609 /* ELEC2660 Logic GameTests */,
+				1AC12FC91FC7535200C67609 /* ELEC2660 Logic GameUITests */,
+				1AC12FA01FC7535200C67609 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1AC12FA01FC7535200C67609 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1AC12F9F1FC7535200C67609 /* ELEC2660 Logic Game.app */,
+				1AC12FBB1FC7535200C67609 /* ELEC2660 Logic GameTests.xctest */,
+				1AC12FC61FC7535200C67609 /* ELEC2660 Logic GameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1AC12FA11FC7535200C67609 /* ELEC2660 Logic Game */ = {
+			isa = PBXGroup;
+			children = (
+				1AC12FA51FC7535200C67609 /* AppDelegate.h */,
+				1AC12FA61FC7535200C67609 /* AppDelegate.m */,
+				1AC12FA81FC7535200C67609 /* MainMenuViewController.h */,
+				1AC12FA91FC7535200C67609 /* MainMenuViewController.m */,
+				1AC12FAB1FC7535200C67609 /* LevelViewController.h */,
+				1AC12FAC1FC7535200C67609 /* LevelViewController.m */,
+				1AC12FAE1FC7535200C67609 /* Main.storyboard */,
+				1AC12FD81FC7697100C67609 /* LevelTableViewController.h */,
+				1AC12FD91FC7697100C67609 /* LevelTableViewController.m */,
+				1AC12FB11FC7535200C67609 /* Assets.xcassets */,
+				1AC12FB31FC7535200C67609 /* LaunchScreen.storyboard */,
+				1AC12FB61FC7535200C67609 /* Info.plist */,
+				1AC12FA21FC7535200C67609 /* Supporting Files */,
+			);
+			path = "ELEC2660 Logic Game";
+			sourceTree = "<group>";
+		};
+		1AC12FA21FC7535200C67609 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1AC12FA31FC7535200C67609 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AC12FBE1FC7535200C67609 /* ELEC2660 Logic GameTests */ = {
+			isa = PBXGroup;
+			children = (
+				1AC12FBF1FC7535200C67609 /* ELEC2660_Logic_GameTests.m */,
+				1AC12FC11FC7535200C67609 /* Info.plist */,
+			);
+			path = "ELEC2660 Logic GameTests";
+			sourceTree = "<group>";
+		};
+		1AC12FC91FC7535200C67609 /* ELEC2660 Logic GameUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1AC12FCA1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m */,
+				1AC12FCC1FC7535200C67609 /* Info.plist */,
+			);
+			path = "ELEC2660 Logic GameUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1AC12F9E1FC7535200C67609 /* ELEC2660 Logic Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AC12FCF1FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic Game" */;
+			buildPhases = (
+				1AC12F9B1FC7535200C67609 /* Sources */,
+				1AC12F9C1FC7535200C67609 /* Frameworks */,
+				1AC12F9D1FC7535200C67609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ELEC2660 Logic Game";
+			productName = "ELEC2660 Logic Game";
+			productReference = 1AC12F9F1FC7535200C67609 /* ELEC2660 Logic Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1AC12FBA1FC7535200C67609 /* ELEC2660 Logic GameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AC12FD21FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic GameTests" */;
+			buildPhases = (
+				1AC12FB71FC7535200C67609 /* Sources */,
+				1AC12FB81FC7535200C67609 /* Frameworks */,
+				1AC12FB91FC7535200C67609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AC12FBD1FC7535200C67609 /* PBXTargetDependency */,
+			);
+			name = "ELEC2660 Logic GameTests";
+			productName = "ELEC2660 Logic GameTests";
+			productReference = 1AC12FBB1FC7535200C67609 /* ELEC2660 Logic GameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1AC12FC51FC7535200C67609 /* ELEC2660 Logic GameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1AC12FD51FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic GameUITests" */;
+			buildPhases = (
+				1AC12FC21FC7535200C67609 /* Sources */,
+				1AC12FC31FC7535200C67609 /* Frameworks */,
+				1AC12FC41FC7535200C67609 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1AC12FC81FC7535200C67609 /* PBXTargetDependency */,
+			);
+			name = "ELEC2660 Logic GameUITests";
+			productName = "ELEC2660 Logic GameUITests";
+			productReference = 1AC12FC61FC7535200C67609 /* ELEC2660 Logic GameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1AC12F971FC7535200C67609 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Johnny Mitchell";
+				TargetAttributes = {
+					1AC12F9E1FC7535200C67609 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					1AC12FBA1FC7535200C67609 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1AC12F9E1FC7535200C67609;
+					};
+					1AC12FC51FC7535200C67609 = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1AC12F9E1FC7535200C67609;
+					};
+				};
+			};
+			buildConfigurationList = 1AC12F9A1FC7535200C67609 /* Build configuration list for PBXProject "ELEC2660 Logic Game" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1AC12F961FC7535200C67609;
+			productRefGroup = 1AC12FA01FC7535200C67609 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1AC12F9E1FC7535200C67609 /* ELEC2660 Logic Game */,
+				1AC12FBA1FC7535200C67609 /* ELEC2660 Logic GameTests */,
+				1AC12FC51FC7535200C67609 /* ELEC2660 Logic GameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1AC12F9D1FC7535200C67609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC12FB51FC7535200C67609 /* LaunchScreen.storyboard in Resources */,
+				1AC12FB21FC7535200C67609 /* Assets.xcassets in Resources */,
+				1AC12FB01FC7535200C67609 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FB91FC7535200C67609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FC41FC7535200C67609 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1AC12F9B1FC7535200C67609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC12FAD1FC7535200C67609 /* LevelViewController.m in Sources */,
+				1AC12FA71FC7535200C67609 /* AppDelegate.m in Sources */,
+				1AC12FAA1FC7535200C67609 /* MainMenuViewController.m in Sources */,
+				1AC12FDA1FC7697100C67609 /* LevelTableViewController.m in Sources */,
+				1AC12FA41FC7535200C67609 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FB71FC7535200C67609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC12FC01FC7535200C67609 /* ELEC2660_Logic_GameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1AC12FC21FC7535200C67609 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1AC12FCB1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1AC12FBD1FC7535200C67609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AC12F9E1FC7535200C67609 /* ELEC2660 Logic Game */;
+			targetProxy = 1AC12FBC1FC7535200C67609 /* PBXContainerItemProxy */;
+		};
+		1AC12FC81FC7535200C67609 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1AC12F9E1FC7535200C67609 /* ELEC2660 Logic Game */;
+			targetProxy = 1AC12FC71FC7535200C67609 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1AC12FAE1FC7535200C67609 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AC12FAF1FC7535200C67609 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1AC12FB31FC7535200C67609 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1AC12FB41FC7535200C67609 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1AC12FCD1FC7535200C67609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1AC12FCE1FC7535200C67609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1AC12FD01FC7535200C67609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ELEC2660 Logic Game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1AC12FD11FC7535200C67609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "ELEC2660 Logic Game/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1AC12FD31FC7535200C67609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ELEC2660 Logic GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELEC2660 Logic Game.app/ELEC2660 Logic Game";
+			};
+			name = Debug;
+		};
+		1AC12FD41FC7535200C67609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "ELEC2660 Logic GameTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-GameTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELEC2660 Logic Game.app/ELEC2660 Logic Game";
+			};
+			name = Release;
+		};
+		1AC12FD61FC7535200C67609 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ELEC2660 Logic GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ELEC2660 Logic Game";
+			};
+			name = Debug;
+		};
+		1AC12FD71FC7535200C67609 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "ELEC2660 Logic GameUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "uk.ac.leeds.ELEC2660-Logic-GameUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "ELEC2660 Logic Game";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1AC12F9A1FC7535200C67609 /* Build configuration list for PBXProject "ELEC2660 Logic Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC12FCD1FC7535200C67609 /* Debug */,
+				1AC12FCE1FC7535200C67609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1AC12FCF1FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC12FD01FC7535200C67609 /* Debug */,
+				1AC12FD11FC7535200C67609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1AC12FD21FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic GameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC12FD31FC7535200C67609 /* Debug */,
+				1AC12FD41FC7535200C67609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1AC12FD51FC7535200C67609 /* Build configuration list for PBXNativeTarget "ELEC2660 Logic GameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1AC12FD61FC7535200C67609 /* Debug */,
+				1AC12FD71FC7535200C67609 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1AC12F971FC7535200C67609 /* Project object */;
+}
