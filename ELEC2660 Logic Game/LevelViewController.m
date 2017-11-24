@@ -21,6 +21,7 @@
     self.levelName.text = self.level.levelName;
     
 #pragma mark Alert
+    
     if (self.level.newInformation == true) {
         //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
         //Create alert controller
@@ -49,6 +50,37 @@
         [alertController addAction:okAction];
         //create alert view
         [self presentViewController:alertController animated:YES completion:nil];
+
+#pragma mark Generate Level
+        
+        //Get level map from the input matrix
+        NSArray *currentLevel = self.level.inputMatrix;
+        NSLog(@"%@",currentLevel);
+        
+        //Get screen dimensions
+        CGRect screenRect = [[UIScreen mainScreen] bounds];
+        CGFloat screenWidth = screenRect.size.width;
+        CGFloat screenHeight = screenRect.size.height;
+        NSLog(@"Height = %f",screenHeight);
+        NSLog(@"Width = %f",screenWidth);
+        
+        
+        //Following code learned from https://stackoverflow.com/questions/1378765/how-do-i-create-a-basic-uibutton-programmatically
+        //buttons (layer 1)
+        UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
+        [button1 addTarget:self
+                   action:@selector(button1Pressed)
+         forControlEvents:UIControlEventTouchUpInside];
+        [button1 setTitle:@"Button 1" forState:UIControlStateNormal];
+        button1.frame = CGRectMake((screenWidth/10), (screenHeight*(6/10)), (screenWidth/10), (screenHeight/10));
+        [self.view addSubview:button1];
+        
+        
+        
+        
+        
+        
+        
     }
 }
 
@@ -57,6 +89,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)button1Pressed {
+    NSLog(@"Button 1 Pressed");
+}
+
 
 
 @end
