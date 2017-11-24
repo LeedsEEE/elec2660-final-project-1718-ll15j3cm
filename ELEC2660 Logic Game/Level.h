@@ -15,5 +15,6 @@
 @property (strong, nonatomic) NSArray *outputMatrix;
 @property (strong, nonatomic) NSString *informationText;
 @property Boolean newInformation;
+@property Boolean complete;
 
 @end

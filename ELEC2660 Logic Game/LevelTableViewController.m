@@ -34,13 +34,18 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
+
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 1;
+
+    NSInteger numberOfRows;
+    
+    if (section == 0) {
+        numberOfRows = self.data.levels.count;
+    }
+    return numberOfRows;
 }
 
 
@@ -48,6 +53,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LevelCell" forIndexPath:indexPath];
     
     // Configure the cell...
+    
+    if (indexPath.section == 0) {
+        Level *tempLevel = [self.data.levels objectAtIndex:indexPath.row];
+        cell.textLabel.text = tempLevel.levelName;
+    }
     
     return cell;
 }
@@ -87,14 +97,23 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([[segue identifier] isEqualToString:@"levelSegue"]) {
+        LevelViewController *destinationViewController = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        if (indexPath.section == 0) {
+            Level *tempLevel = [self.data.levels objectAtIndex:indexPath.row];
+            destinationViewController.level = tempLevel;
+        }
+    }
 }
-*/
+
 
 @end

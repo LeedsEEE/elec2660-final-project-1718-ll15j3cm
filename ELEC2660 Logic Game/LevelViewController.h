@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Level.h"
 
 @interface LevelViewController : UIViewController
+
+@property (weak, nonatomic) IBOutlet UILabel *levelName;
+@property (strong, nonatomic) Level *level;
 
 
 @end

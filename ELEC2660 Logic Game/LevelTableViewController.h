@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "DataModel.h"
+#import "LevelViewController.h"
 
 @interface LevelTableViewController : UITableViewController
 
