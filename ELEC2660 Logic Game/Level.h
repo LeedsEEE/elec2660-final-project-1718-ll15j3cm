@@ -12,7 +12,7 @@
 
 @property (strong, nonatomic) NSString *levelName;
 @property (strong, nonatomic) NSArray *inputMatrix;
-@property (strong, nonatomic) NSArray *outputMatrix;
+@property (strong, nonatomic) NSMutableArray *outputMatrix;
 @property (strong, nonatomic) NSString *informationText;
 @property Boolean newInformation;
 @property Boolean complete;

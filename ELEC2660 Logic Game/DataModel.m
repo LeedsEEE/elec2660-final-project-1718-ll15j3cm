@@ -16,15 +16,15 @@ Data model notes:
 
  Matrix:
     0 - no object
-    1 - button/input
-    2 - light/output
-    3 - wire/buffer
-    4 - or gate
-    5 - and gate
-    6 - not gate
-    7 - nor gate
-    8 - nand gate
-    9 - 
+    1 - button/input OFF
+    2 - button/input ON
+    3 - light/output
+    4 - wire/buffer OFF
+    5 - wire/buffer ON
+    6 - or gate
+    7 - and gate
+    8 - not gate
+    9 - nand gate
  
  newInformation - Is there a tutorial screen before this level?
  
@@ -40,28 +40,28 @@ Data model notes:
         self.levels = [NSMutableArray array];
         Level *level1 = [[Level alloc] init];
         level1.levelName = @"Level 1";
+        //Pre defined and non-changable level layout
         level1.inputMatrix = @[
                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@2,@0,@0,@0,@0,
                                @0,@0,@0,@0,@3,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@4,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@4,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@4,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@4,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@4,@0,@0,@0,@0,
                                @0,@0,@0,@0,@1,@0,@0,@0,@0
                                ];
-        level1.outputMatrix = @[
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0
-                                ];
+        level1.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level1.newInformation = true;
         level1.informationText = @"The goal of this game is to enable the output light using the input buttons. Tap an input button to see this in action!";
         level1.complete = false;
@@ -70,6 +70,7 @@ Data model notes:
         self.levels = [NSMutableArray array];
         Level *level2 = [[Level alloc] init];
         level2.levelName = @"Level 2";
+        //Pre defined and non-changable level layout
         level2.inputMatrix = @[
                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
@@ -78,20 +79,19 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @4,@4,@4,@4,@4,@4,@4,@4,@4,
                                @1,@1,@1,@1,@1,@1,@1,@1,@1
                                ];
-        level2.outputMatrix = @[
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                                @0,@0,@0,@0,@0,@0,@0,@0,@0
-                                ];
+        level2.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@2,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@1,@0,@0,@0,@0,nil];
         level2.newInformation = false;
         level2.informationText = @"";
         level2.complete = false;

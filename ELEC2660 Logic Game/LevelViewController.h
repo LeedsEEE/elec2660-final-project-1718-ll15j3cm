@@ -14,6 +14,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *levelName;
 @property (strong, nonatomic) Level *level;
 
-
 @end
 
