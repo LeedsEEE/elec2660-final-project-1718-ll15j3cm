@@ -280,7 +280,8 @@
                 updateRequired = true;
             }
         } else {
-            //Update Wires
+            //Update Wires - rules: 3 represents an OFF wire, 4 represents an ON wire and 99 represents a TEMPORARY wire
+            //Update Wires - logic: replace ON wires with TEMPORARY wires and replace TEMPORARY wires with OFF wires to avoid the OFF wires immediatly turning back on
             if ([self.level.outputMatrix[i]  isEqual: @3]) {
                     if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
                         ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
@@ -289,10 +290,8 @@
                         [self.level.outputMatrix setObject:@4 atIndexedSubscript:i];
                         updateRequired = true;
                     }
-                //If 99 adjacent to 1 then 3
-                //if 99 adjacent to 3 then 3
             } else {
-                //Replace ON wires with temp wires
+                //Replace ON wires with TEMPORARY wires
                 if ([self.level.outputMatrix[i]  isEqual: @4]) {
                     if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
                         ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])) {
@@ -306,9 +305,11 @@
                         }
                     }
                 } else {
+                    //Replace TEMPORARY wires with OFF wires
                     if ([self.level.outputMatrix[i]  isEqual: @99]) {
                         if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
-                            ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])) {
+                            ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
+                            ([self.level.outputMatrix[i+9]  isEqual: @5])) {
                             [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
                             updateRequired = true;
                         } else {
@@ -319,7 +320,7 @@
                             }
                         }
                     } else {
-                        //AND Gate
+                        //AND Gate - logic: Take 2 sides as inputs and output if they are both on.
                         if ([self.level.outputMatrix[i]  isEqual: @5]) {
                             if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))&&
                                 (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
@@ -327,11 +328,27 @@
                                     [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
                                     updateRequired = true;
                                 }
+                            } else {
+                                if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                    [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                    updateRequired = true;
+                                }
                             }
                         } else {
-                            //OR Gate
+                            //OR Gate - logic: Take 2 sides as inputs and output if either or both are on.
                             if ([self.level.outputMatrix[i] isEqual: @6]) {
-                                
+                                if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
+                                    (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
+                                    if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                        [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                        updateRequired = true;
+                                    }
+                                } else {
+                                    if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                        [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                        updateRequired = true;
+                                    }
+                                }
                             } else {
                                 //NOT Gate
                                 if ([self.level.outputMatrix[i] isEqual: @7]) {
