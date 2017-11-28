@@ -26,6 +26,7 @@ Data model notes:
     8 - nand gate
     9 - light OFF
    10 - light ON
+   99 - Wire TURNED OFF STATE (Decays to 3)
  
  newInformation - Is there a tutorial screen before this level?
  
