@@ -221,11 +221,11 @@
     //Images for Wires
     for (int i=0;i<=80;i++) {
         if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:i] intValue] == 4) {
-            float xcoord = (screenWidth*((i%9)/11));
-            float ycoord = (screenHeight*(((i-(i%9))/9)/11));
+            float xcoord = (screenWidth*((i%9)/11.00));
+            float ycoord = (screenHeight*(((i-(i%9))/9.00)/11.00));
             UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
             wire.image=[UIImage imageNamed:@"logo.png"];
-            [wire setTag:i];
+            [wire setTag:i+100];
             [self.view addSubview:wire];
             UIImageView *imgView = [self.view viewWithTag:i];
             [self.view addSubview:imgView];
@@ -234,6 +234,7 @@
     for (UIImageView *imgView in self.view.subviews) {
         if ([imgView isKindOfClass:[UIImageView class]]) {
             NSLog(@"imageview with tag %ld found", imgView.tag);
+            [self.view addSubview:imgView];
         }
     }
     [self updateMatrix];
@@ -264,6 +265,7 @@
 }
 
 #pragma mark Update Matrix
+
 //THIS WORKS DO NOT TOUCH
 - (void)updateMatrix {
     NSLog(@"Updating output matrix...");
@@ -280,8 +282,8 @@
                 updateRequired = true;
             }
         } else {
-            //Update Wires - rules: 3 represents an OFF wire, 4 represents an ON wire and 99 represents a TEMPORARY wire
-            //Update Wires - logic: replace ON wires with TEMPORARY wires and replace TEMPORARY wires with OFF wires to avoid the OFF wires immediatly turning back on
+            //Update Wires - Rules: 3 represents an OFF wire, 4 represents an ON wire and 99 represents a TEMPORARY wire
+            //Update Wires - Logic: replace ON wires with TEMPORARY wires and replace TEMPORARY wires with OFF wires to avoid the OFF wires immediatly turning back on
             if ([self.level.outputMatrix[i]  isEqual: @3]) {
                     if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
                         ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
