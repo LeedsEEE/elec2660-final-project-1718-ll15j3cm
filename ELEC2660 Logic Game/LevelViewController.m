@@ -260,6 +260,9 @@
         float ycoord = (screenHeight*((1+((i-(i%9))/9.00))/11.00));
         //Check for bulbs being LIT
         if ([self.level.outputMatrix[i] isEqual:@9]) {
+            UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+            bulb.image=[UIImage imageNamed:@"bulbOff.png"];
+            [self.view addSubview:bulb];
             if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
                 ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
                 ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
@@ -269,6 +272,9 @@
             }
         } else {
             if ([self.level.outputMatrix[i] isEqual:@10]) {
+                UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                bulb.image=[UIImage imageNamed:@"bulbOn.png"];
+                [self.view addSubview:bulb];
                 if (!(([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
                     ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
                     ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
@@ -282,7 +288,7 @@
                 if ([self.level.outputMatrix[i]  isEqual: @3]) {
                     //Update Image
                     UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-                    wire.image=[UIImage imageNamed:@"logo.png"];
+                    wire.image=[UIImage imageNamed:@"wireOff.png"];
                     [self.view addSubview:wire];
                         if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
                             ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
@@ -296,7 +302,7 @@
                     if ([self.level.outputMatrix[i]  isEqual: @4]) {
                         //Update Image
                         UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-                        wire.image=[UIImage imageNamed:@"Background Texture.png"];
+                        wire.image=[UIImage imageNamed:@"wireOn.png"];
                         [self.view addSubview:wire];
                         if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
                             ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])) {
@@ -328,6 +334,9 @@
                         } else {
                             //AND Gate - logic: Take 2 sides as inputs and output if they are both on.
                             if ([self.level.outputMatrix[i]  isEqual: @5]) {
+                                UIImageView *andGate =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                andGate.image=[UIImage imageNamed:@"ANDGate.png"];
+                                [self.view addSubview:andGate];
                                 if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))&&
                                     (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
                                     if ([self.level.outputMatrix[i-9] isEqual:@3]) {
