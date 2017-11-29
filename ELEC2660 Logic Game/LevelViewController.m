@@ -57,7 +57,6 @@
 #pragma mark Generate Level
         //Get level map from the input matrix
         self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
-        NSLog(@"%@",self.level.outputMatrix);
     
         //Get screen dimensions
         CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -218,25 +217,7 @@
             [button9 setSelected:NO];
             [self.view addSubview:button9];
         }
-    //Images for Wires
-    for (int i=0;i<=80;i++) {
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:i] intValue] == 4) {
-            float xcoord = (screenWidth*((i%9)/11.00));
-            float ycoord = (screenHeight*(((i-(i%9))/9.00)/11.00));
-            UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-            wire.image=[UIImage imageNamed:@"logo.png"];
-            [wire setTag:i+100];
-            [self.view addSubview:wire];
-            UIImageView *imgView = [self.view viewWithTag:i];
-            [self.view addSubview:imgView];
-        }
-    }
-    for (UIImageView *imgView in self.view.subviews) {
-        if ([imgView isKindOfClass:[UIImageView class]]) {
-            NSLog(@"imageview with tag %ld found", imgView.tag);
-            [self.view addSubview:imgView];
-        }
-    }
+    //Initialise Map
     [self updateMatrix];
 }
 
@@ -268,10 +249,15 @@
 
 //THIS WORKS DO NOT TOUCH
 - (void)updateMatrix {
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
     NSLog(@"Updating output matrix...");
     bool levelComplete = true;
     bool updateRequired = false;
     for (int i = 0; i <= 80; i++) {
+        float xcoord = (screenWidth*((1+(i%9))/11.00));
+        float ycoord = (screenHeight*((1+((i-(i%9))/9.00))/11.00));
         //Check for bulbs being LIT
         if ([self.level.outputMatrix[i] isEqual:@9]) {
             if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
@@ -282,64 +268,67 @@
                 updateRequired = true;
             }
         } else {
-            //Update Wires - Rules: 3 represents an OFF wire, 4 represents an ON wire and 99 represents a TEMPORARY wire
-            //Update Wires - Logic: replace ON wires with TEMPORARY wires and replace TEMPORARY wires with OFF wires to avoid the OFF wires immediatly turning back on
-            if ([self.level.outputMatrix[i]  isEqual: @3]) {
-                    if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
-                        ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
-                        ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
-                        ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2])) {
-                        [self.level.outputMatrix setObject:@4 atIndexedSubscript:i];
-                        updateRequired = true;
-                    }
+            if ([self.level.outputMatrix[i] isEqual:@10]) {
+                if (!(([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
+                    ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
+                    ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
+                    ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2]))) {
+                    [self.level.outputMatrix setObject:@9 atIndexedSubscript:i];
+                    updateRequired = true;
+                }
             } else {
-                //Replace ON wires with TEMPORARY wires
-                if ([self.level.outputMatrix[i]  isEqual: @4]) {
-                    if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
-                        ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])) {
-                        [self.level.outputMatrix setObject:@99 atIndexedSubscript:i];
-                        updateRequired = true;
-                    } else {
-                        if (([self.level.outputMatrix[i-9]  isEqual: @99])||([self.level.outputMatrix[i+1]  isEqual: @99])||
-                            ([self.level.outputMatrix[i-1]  isEqual: @99])||([self.level.outputMatrix[i+9]  isEqual: @99])) {
-                            [self.level.outputMatrix setObject:@99 atIndexedSubscript:i];
+                //Update Wires - Rules: 3 represents an OFF wire, 4 represents an ON wire and 99 represents a TEMPORARY wire
+                //Update Wires - Logic: replace ON wires with TEMPORARY wires and replace TEMPORARY wires with OFF wires to avoid the OFF wires immediatly turning back on
+                if ([self.level.outputMatrix[i]  isEqual: @3]) {
+                    //Update Image
+                    UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                    wire.image=[UIImage imageNamed:@"logo.png"];
+                    [self.view addSubview:wire];
+                        if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
+                            ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
+                            ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
+                            ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2])) {
+                            [self.level.outputMatrix setObject:@4 atIndexedSubscript:i];
                             updateRequired = true;
                         }
-                    }
                 } else {
-                    //Replace TEMPORARY wires with OFF wires
-                    if ([self.level.outputMatrix[i]  isEqual: @99]) {
+                    //Replace ON wires with TEMPORARY wires
+                    if ([self.level.outputMatrix[i]  isEqual: @4]) {
+                        //Update Image
+                        UIImageView *wire =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                        wire.image=[UIImage imageNamed:@"Background Texture.png"];
+                        [self.view addSubview:wire];
                         if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
-                            ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
-                            ([self.level.outputMatrix[i+9]  isEqual: @5])) {
-                            [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
+                            ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])) {
+                            [self.level.outputMatrix setObject:@99 atIndexedSubscript:i];
                             updateRequired = true;
                         } else {
-                            if (([self.level.outputMatrix[i-9]  isEqual: @3])||([self.level.outputMatrix[i+1]  isEqual: @3])||
-                                ([self.level.outputMatrix[i-1]  isEqual: @3])||([self.level.outputMatrix[i+9]  isEqual: @3])) {
-                                [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
+                            if (([self.level.outputMatrix[i-9]  isEqual: @99])||([self.level.outputMatrix[i+1]  isEqual: @99])||
+                                ([self.level.outputMatrix[i-1]  isEqual: @99])||([self.level.outputMatrix[i+9]  isEqual: @99])) {
+                                [self.level.outputMatrix setObject:@99 atIndexedSubscript:i];
                                 updateRequired = true;
                             }
                         }
                     } else {
-                        //AND Gate - logic: Take 2 sides as inputs and output if they are both on.
-                        if ([self.level.outputMatrix[i]  isEqual: @5]) {
-                            if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))&&
-                                (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
-                                if ([self.level.outputMatrix[i-9] isEqual:@3]) {
-                                    [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
-                                    updateRequired = true;
-                                }
+                        //Replace TEMPORARY wires with OFF wires
+                        if ([self.level.outputMatrix[i]  isEqual: @99]) {
+                            //No texture because wires are temporary
+                            if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
+                                ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
+                                ([self.level.outputMatrix[i+9]  isEqual: @5])) {
+                                [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
+                                updateRequired = true;
                             } else {
-                                if ([self.level.outputMatrix[i-9] isEqual:@4]) {
-                                    [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                if (([self.level.outputMatrix[i-9]  isEqual: @3])||([self.level.outputMatrix[i+1]  isEqual: @3])||
+                                    ([self.level.outputMatrix[i-1]  isEqual: @3])||([self.level.outputMatrix[i+9]  isEqual: @3])) {
+                                    [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
                                     updateRequired = true;
                                 }
                             }
                         } else {
-                            //OR Gate - logic: Take 2 sides as inputs and output if either or both are on.
-                            if ([self.level.outputMatrix[i] isEqual: @6]) {
-                                if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
+                            //AND Gate - logic: Take 2 sides as inputs and output if they are both on.
+                            if ([self.level.outputMatrix[i]  isEqual: @5]) {
+                                if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))&&
                                     (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
                                     if ([self.level.outputMatrix[i-9] isEqual:@3]) {
                                         [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
@@ -352,17 +341,33 @@
                                     }
                                 }
                             } else {
-                                //NOT Gate
-                                if ([self.level.outputMatrix[i] isEqual: @7]) {
-                                    
+                                //OR Gate - logic: Take 2 sides as inputs and output if either or both are on.
+                                if ([self.level.outputMatrix[i] isEqual: @6]) {
+                                    if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
+                                        (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
+                                        if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                            [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                            updateRequired = true;
+                                        }
+                                    } else {
+                                        if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                            [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                            updateRequired = true;
+                                        }
+                                    }
                                 } else {
-                                    //NAND Gate
-                                    if ([self.level.outputMatrix[i] isEqual: @8]) {
+                                    //NOT Gate
+                                    if ([self.level.outputMatrix[i] isEqual: @7]) {
                                         
                                     } else {
-                                        //NOR Gate
-                                        if ([self.level.outputMatrix[i] isEqual: @11]) {
+                                        //NAND Gate
+                                        if ([self.level.outputMatrix[i] isEqual: @8]) {
                                             
+                                        } else {
+                                            //NOR Gate
+                                            if ([self.level.outputMatrix[i] isEqual: @11]) {
+                                                
+                                            }
                                         }
                                     }
                                 }
