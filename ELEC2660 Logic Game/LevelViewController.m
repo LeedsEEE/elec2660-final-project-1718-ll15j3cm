@@ -76,7 +76,7 @@
                         action:@selector(buttonPressed:)
                 forControlEvents:UIControlEventTouchUpInside];
             [button1 setTitle:@"Button 1" forState:UIControlStateNormal];
-            button1.frame = CGRectMake((screenWidth*0.0909), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button1.frame = CGRectMake((screenWidth*(1.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button1 layer] setBorderWidth:2.0f];
             [[button1 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:72];
@@ -93,7 +93,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button2 setTitle:@"Button 2" forState:UIControlStateNormal];
-            button2.frame = CGRectMake((screenWidth*0.1818), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button2.frame = CGRectMake((screenWidth*(2.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button2 layer] setBorderWidth:2.0f];
             [[button2 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:73];
@@ -110,7 +110,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button3 setTitle:@"Button 3" forState:UIControlStateNormal];
-            button3.frame = CGRectMake((screenWidth*0.2727), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button3.frame = CGRectMake((screenWidth*(3.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button3 layer] setBorderWidth:2.0f];
             [[button3 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:74];
@@ -126,7 +126,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button4 setTitle:@"Button 4" forState:UIControlStateNormal];
-            button4.frame = CGRectMake((screenWidth*0.3636), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button4.frame = CGRectMake((screenWidth*(4.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button4 layer] setBorderWidth:2.0f];
             [[button4 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:75];
@@ -143,7 +143,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button5 setTitle:@"Button 5" forState:UIControlStateNormal];
-            button5.frame = CGRectMake((screenWidth*0.4545), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button5.frame = CGRectMake((screenWidth*(5.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button5 layer] setBorderWidth:2.0f];
             [[button5 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:76];
@@ -160,7 +160,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button6 setTitle:@"Button 6" forState:UIControlStateNormal];
-            button6.frame = CGRectMake((screenWidth*0.5454), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button6.frame = CGRectMake((screenWidth*(6.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button6 layer] setBorderWidth:2.0f];
             [[button6 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:77];
@@ -176,7 +176,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button7 setTitle:@"Button 7" forState:UIControlStateNormal];
-            button7.frame = CGRectMake((screenWidth*0.6363), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button7.frame = CGRectMake((screenWidth*(7.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button7 layer] setBorderWidth:2.0f];
             [[button7 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:78];
@@ -193,7 +193,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button8 setTitle:@"Button 8" forState:UIControlStateNormal];
-            button8.frame = CGRectMake((screenWidth*0.7272), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button8.frame = CGRectMake((screenWidth*(8.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button8 layer] setBorderWidth:2.0f];
             [[button8 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:79];
@@ -210,7 +210,7 @@
                         action:@selector(buttonPressed:)
               forControlEvents:UIControlEventTouchUpInside];
             [button9 setTitle:@"Button 9" forState:UIControlStateNormal];
-            button9.frame = CGRectMake((screenWidth*0.8181), (screenHeight*(0.8)), (screenWidth/11), (screenHeight/11));
+            button9.frame = CGRectMake((screenWidth*(9.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button9 layer] setBorderWidth:2.0f];
             [[button9 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:80];
@@ -227,7 +227,6 @@
 }
 
 #pragma mark Button Pressed Function
-
 //Button pressed function
 - (void)buttonPressed:(UIButton*)sender {
     NSInteger index = sender.tag;
@@ -235,18 +234,21 @@
         NSLog(@"Button with index %li on",(long)index);
         [self.level.outputMatrix setObject:@2 atIndexedSubscript:index];
         [[sender layer] setBorderColor:[UIColor greenColor].CGColor];
+        UIImage *onImage = [UIImage imageNamed:@"ButtonOn.png"];
+        [sender setImage:onImage forState:UIControlStateNormal];
         [sender setSelected:NO];
     } else {
         NSLog(@"Button with index %li off",(long)index);
         [self.level.outputMatrix setObject:@1 atIndexedSubscript:index];
         [[sender layer] setBorderColor:[UIColor redColor].CGColor];
+        UIImage *offImage = [UIImage imageNamed:@"ButtonOff.png"];
+        [sender setImage:offImage forState:UIControlStateNormal];
         [sender setSelected:YES];
     }
     [self updateMatrix];
 }
 
 #pragma mark Update Matrix
-
 //THIS WORKS DO NOT TOUCH
 - (void)updateMatrix {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -269,6 +271,9 @@
                 ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2])) {
                 [self.level.outputMatrix setObject:@10 atIndexedSubscript:i];
                 updateRequired = true;
+                UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                bulb.image=[UIImage imageNamed:@"bulbOn.png"];
+                [self.view addSubview:bulb];
             }
         } else {
             if ([self.level.outputMatrix[i] isEqual:@10]) {

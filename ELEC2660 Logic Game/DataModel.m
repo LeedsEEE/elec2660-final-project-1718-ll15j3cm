@@ -129,11 +129,41 @@ Data model notes:
         level3.informationText = @"This level introduces the AND gate! Turn both of it's side wires on to get the top wire to output!";
         level3.complete = false;
         
+        //Level 4
+        self.levels = [NSMutableArray array];
+        Level *level4 = [[Level alloc] init];
+        level4.levelName = @"Level 4";
+        //Pre defined and non-changable level layout
+        level4.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@9,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@3,@3,@5,@3,@3,@0,@0,
+                               @0,@0,@3,@0,@0,@0,@3,@0,@0,
+                               @0,@3,@5,@3,@0,@3,@5,@3,@0,
+                               @0,@1,@0,@1,@0,@1,@0,@1,@0
+                               ];
+        level4.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level4.newInformation = true;
+        level4.informationText = @"This level introduces the AND gate! Turn both of it's side wires on to get the top wire to output!";
+        level4.complete = false;
+        
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
         [self.levels addObject:level2]; //index 1
         [self.levels addObject:level3]; //index 2
-        
+        [self.levels addObject:level4]; //index 3
     }
     return self;
 }

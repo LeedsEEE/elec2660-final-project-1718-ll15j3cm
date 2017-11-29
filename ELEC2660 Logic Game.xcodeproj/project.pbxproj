@@ -7,7 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A136CE91FCF40EE003A7EA9 /* Images in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CE81FCF40EE003A7EA9 /* Images */; };
+		1A136D071FCF498F003A7EA9 /* ANDGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CFB1FCF498F003A7EA9 /* ANDGate.png */; };
+		1A136D081FCF498F003A7EA9 /* Background texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CFC1FCF498F003A7EA9 /* Background texture.png */; };
+		1A136D091FCF498F003A7EA9 /* bulbOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CFD1FCF498F003A7EA9 /* bulbOff.png */; };
+		1A136D0A1FCF498F003A7EA9 /* bulbOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CFE1FCF498F003A7EA9 /* bulbOn.png */; };
+		1A136D0B1FCF498F003A7EA9 /* ButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136CFF1FCF498F003A7EA9 /* ButtonOff.png */; };
+		1A136D0C1FCF498F003A7EA9 /* ButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D001FCF498F003A7EA9 /* ButtonOn.png */; };
+		1A136D0D1FCF498F003A7EA9 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D011FCF498F003A7EA9 /* Logo.png */; };
+		1A136D0E1FCF498F003A7EA9 /* NANOGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D021FCF498F003A7EA9 /* NANOGate.png */; };
+		1A136D0F1FCF498F003A7EA9 /* NORGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D031FCF498F003A7EA9 /* NORGate.png */; };
+		1A136D101FCF498F003A7EA9 /* ORGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D041FCF498F003A7EA9 /* ORGate.png */; };
+		1A136D111FCF498F003A7EA9 /* wireOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D051FCF498F003A7EA9 /* wireOff.png */; };
+		1A136D121FCF498F003A7EA9 /* wireOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1A136D061FCF498F003A7EA9 /* wireOn.png */; };
 		1AC12FA41FC7535200C67609 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA31FC7535200C67609 /* main.m */; };
 		1AC12FA71FC7535200C67609 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA61FC7535200C67609 /* AppDelegate.m */; };
 		1AC12FAA1FC7535200C67609 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA91FC7535200C67609 /* MainMenuViewController.m */; };
@@ -41,7 +52,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A136CE81FCF40EE003A7EA9 /* Images */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Images; sourceTree = "<group>"; };
+		1A136CFB1FCF498F003A7EA9 /* ANDGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ANDGate.png; sourceTree = "<group>"; };
+		1A136CFC1FCF498F003A7EA9 /* Background texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background texture.png"; sourceTree = "<group>"; };
+		1A136CFD1FCF498F003A7EA9 /* bulbOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulbOff.png; sourceTree = "<group>"; };
+		1A136CFE1FCF498F003A7EA9 /* bulbOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulbOn.png; sourceTree = "<group>"; };
+		1A136CFF1FCF498F003A7EA9 /* ButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonOff.png; sourceTree = "<group>"; };
+		1A136D001FCF498F003A7EA9 /* ButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonOn.png; sourceTree = "<group>"; };
+		1A136D011FCF498F003A7EA9 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		1A136D021FCF498F003A7EA9 /* NANOGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NANOGate.png; sourceTree = "<group>"; };
+		1A136D031FCF498F003A7EA9 /* NORGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NORGate.png; sourceTree = "<group>"; };
+		1A136D041FCF498F003A7EA9 /* ORGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ORGate.png; sourceTree = "<group>"; };
+		1A136D051FCF498F003A7EA9 /* wireOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireOff.png; sourceTree = "<group>"; };
+		1A136D061FCF498F003A7EA9 /* wireOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireOn.png; sourceTree = "<group>"; };
 		1AC12F9F1FC7535200C67609 /* ELEC2660 Logic Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC2660 Logic Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC12FA31FC7535200C67609 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AC12FA51FC7535200C67609 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +117,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A136CEC1FCF4353003A7EA9 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1A136CFB1FCF498F003A7EA9 /* ANDGate.png */,
+				1A136CFC1FCF498F003A7EA9 /* Background texture.png */,
+				1A136CFD1FCF498F003A7EA9 /* bulbOff.png */,
+				1A136CFE1FCF498F003A7EA9 /* bulbOn.png */,
+				1A136CFF1FCF498F003A7EA9 /* ButtonOff.png */,
+				1A136D001FCF498F003A7EA9 /* ButtonOn.png */,
+				1A136D011FCF498F003A7EA9 /* Logo.png */,
+				1A136D021FCF498F003A7EA9 /* NANOGate.png */,
+				1A136D031FCF498F003A7EA9 /* NORGate.png */,
+				1A136D041FCF498F003A7EA9 /* ORGate.png */,
+				1A136D051FCF498F003A7EA9 /* wireOff.png */,
+				1A136D061FCF498F003A7EA9 /* wireOn.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		1AC12F961FC7535200C67609 = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +177,7 @@
 				1AC12FB11FC7535200C67609 /* Assets.xcassets */,
 				1AC12FB31FC7535200C67609 /* LaunchScreen.storyboard */,
 				1AC12FB61FC7535200C67609 /* Info.plist */,
-				1A136CE81FCF40EE003A7EA9 /* Images */,
+				1A136CEC1FCF4353003A7EA9 /* Images */,
 				1AC12FA21FC7535200C67609 /* Supporting Files */,
 			);
 			path = "ELEC2660 Logic Game";
@@ -274,9 +315,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A136CE91FCF40EE003A7EA9 /* Images in Resources */,
+				1A136D111FCF498F003A7EA9 /* wireOff.png in Resources */,
 				1AC12FB51FC7535200C67609 /* LaunchScreen.storyboard in Resources */,
+				1A136D0E1FCF498F003A7EA9 /* NANOGate.png in Resources */,
+				1A136D101FCF498F003A7EA9 /* ORGate.png in Resources */,
+				1A136D081FCF498F003A7EA9 /* Background texture.png in Resources */,
+				1A136D0F1FCF498F003A7EA9 /* NORGate.png in Resources */,
+				1A136D121FCF498F003A7EA9 /* wireOn.png in Resources */,
+				1A136D0A1FCF498F003A7EA9 /* bulbOn.png in Resources */,
+				1A136D0C1FCF498F003A7EA9 /* ButtonOn.png in Resources */,
 				1AC12FB21FC7535200C67609 /* Assets.xcassets in Resources */,
+				1A136D0D1FCF498F003A7EA9 /* Logo.png in Resources */,
+				1A136D091FCF498F003A7EA9 /* bulbOff.png in Resources */,
+				1A136D071FCF498F003A7EA9 /* ANDGate.png in Resources */,
+				1A136D0B1FCF498F003A7EA9 /* ButtonOff.png in Resources */,
 				1AC12FB01FC7535200C67609 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
