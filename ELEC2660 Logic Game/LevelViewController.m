@@ -326,7 +326,8 @@
                             //No texture because wires are temporary
                             if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
                                 ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
-                                ([self.level.outputMatrix[i+9]  isEqual: @5])) {
+                                ([self.level.outputMatrix[i+9]  isEqual: @5])||([self.level.outputMatrix[i+9]  isEqual: @6])||
+                                ([self.level.outputMatrix[i+9]  isEqual: @7])) {
                                 [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
                                 updateRequired = true;
                             } else {
@@ -357,6 +358,9 @@
                             } else {
                                 //OR Gate - logic: Take 2 sides as inputs and output if either or both are on.
                                 if ([self.level.outputMatrix[i] isEqual: @6]) {
+                                    UIImageView *orGate =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                    orGate.image=[UIImage imageNamed:@"ORGate.png"];
+                                    [self.view addSubview:orGate];
                                     if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
                                         (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
                                         if ([self.level.outputMatrix[i-9] isEqual:@3]) {
@@ -372,7 +376,22 @@
                                 } else {
                                     //NOT Gate
                                     if ([self.level.outputMatrix[i] isEqual: @7]) {
-                                        
+                                        UIImageView *notGate =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                        notGate.image=[UIImage imageNamed:@"NOTGate.png"];
+                                        [self.view addSubview:notGate];
+                                        if (([self.level.outputMatrix[i+9] isEqual: @3])||([self.level.outputMatrix[i+9] isEqual: @1])) {
+                                            if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                                [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                                updateRequired = true;
+                                            }
+                                        } else {
+                                            if (([self.level.outputMatrix[i+9] isEqual: @4])||([self.level.outputMatrix[i+9] isEqual: @2])) {
+                                                if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                                    [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                                    updateRequired = true;
+                                                }
+                                            }
+                                        }
                                     } else {
                                         //NAND Gate
                                         if ([self.level.outputMatrix[i] isEqual: @8]) {

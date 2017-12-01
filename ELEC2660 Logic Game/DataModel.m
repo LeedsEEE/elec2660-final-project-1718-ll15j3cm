@@ -155,15 +155,108 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
-        level4.newInformation = true;
-        level4.informationText = @"This level introduces the AND gate! Turn both of it's side wires on to get the top wire to output!";
+        level4.newInformation = false;
+        level4.informationText = @"";
         level4.complete = false;
+        
+        //Level 5
+        self.levels = [NSMutableArray array];
+        Level *level5 = [[Level alloc] init];
+        level5.levelName = @"Level 5";
+        //Pre defined and non-changable level layout
+        level5.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@9,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@0,@0,@0,@0,
+                               @0,@3,@3,@5,@3,@0,@0,@0,@0,
+                               @0,@3,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@3,@0,@3,@6,@3,@0,@0,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@1,@0,@1,@0,@1,@0,@0,@0
+                               ];
+        level5.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level5.newInformation = true;
+        level5.informationText = @"This level introduces the OR gate! Turn on either of the adjacent inputs to output a 1!";
+        level5.complete = false;
+        
+        //Level 6
+        self.levels = [NSMutableArray array];
+        Level *level6 = [[Level alloc] init];
+        level6.levelName = @"Level 6";
+        //Pre defined and non-changable level layout
+        level6.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@9,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@0,@0,@0,@0,
+                               @0,@0,@3,@5,@3,@0,@0,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@3,@0,@7,@0,@0,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@1,@0,@1,@0,@0,@0,@0
+                               ];
+        level6.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level6.newInformation = false;
+        level6.informationText = @"";
+        level6.complete = false;
+        
+        //Level 7
+        self.levels = [NSMutableArray array];
+        Level *level7 = [[Level alloc] init];
+        level7.levelName = @"Level 7";
+        //Pre defined and non-changable level layout
+        level7.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@9,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@0,@0,@0,@0,
+                               @0,@0,@3,@5,@3,@3,@3,@0,@0,
+                               @0,@0,@3,@0,@0,@0,@3,@0,@0,
+                               @0,@0,@3,@0,@0,@3,@6,@3,@0,
+                               @0,@3,@6,@3,@0,@7,@0,@3,@0,
+                               @0,@3,@0,@3,@3,@3,@0,@3,@0,
+                               @0,@1,@0,@0,@1,@0,@0,@1,@0
+                               ];
+        level7.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level7.newInformation = false;
+        level7.informationText = @"!";
+        level7.complete = false;
         
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
         [self.levels addObject:level2]; //index 1
         [self.levels addObject:level3]; //index 2
         [self.levels addObject:level4]; //index 3
+        [self.levels addObject:level5]; //index 4
+        [self.levels addObject:level6]; //index 5
+        [self.levels addObject:level7]; //index 6
     }
     return self;
 }
