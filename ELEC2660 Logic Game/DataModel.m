@@ -246,8 +246,68 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level7.newInformation = false;
-        level7.informationText = @"!";
+        level7.informationText = @"";
         level7.complete = false;
+        
+        //Level 8
+        self.levels = [NSMutableArray array];
+        Level *level8 = [[Level alloc] init];
+        level8.levelName = @"Level 8";
+        //Pre defined and non-changable level layout
+        level8.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@9,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@7,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@8,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@0,@1,@0,@1,@0,@0,@0
+                               ];
+        level8.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level8.newInformation = true;
+        level8.informationText = @"This level introduces the NAND gate! Turn on both inputs to cause the output to turn off!";
+        level8.complete = false;
+        
+        //Level 9
+        self.levels = [NSMutableArray array];
+        Level *level9 = [[Level alloc] init];
+        level9.levelName = @"Level 9";
+        //Pre defined and non-changable level layout
+        level9.inputMatrix = @[
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@9,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@7,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@11,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@0,@1,@0,@1,@0,@0,@0
+                               ];
+        level9.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level9.newInformation = true;
+        level9.informationText = @"This level introduces the NOR gate! Turn on either of the inputs to cause the output to turn off!";
+        level9.complete = false;
         
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
@@ -257,6 +317,8 @@ Data model notes:
         [self.levels addObject:level5]; //index 4
         [self.levels addObject:level6]; //index 5
         [self.levels addObject:level7]; //index 6
+        [self.levels addObject:level8]; //index 7
+        [self.levels addObject:level9]; //index 8
     }
     return self;
 }

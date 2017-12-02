@@ -80,7 +80,6 @@
             [[button1 layer] setBorderWidth:2.0f];
             [[button1 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:72];
-            [button1 setSelected:NO];
             [self.view addSubview:button1];
         }
         
@@ -97,7 +96,6 @@
             [[button2 layer] setBorderWidth:2.0f];
             [[button2 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:73];
-            [button2 setSelected:NO];
             [self.view addSubview:button2];
         }
         
@@ -114,7 +112,6 @@
             [[button3 layer] setBorderWidth:2.0f];
             [[button3 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:74];
-            [button3 setSelected:NO];
             [self.view addSubview:button3];
         }
         
@@ -130,7 +127,6 @@
             [[button4 layer] setBorderWidth:2.0f];
             [[button4 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:75];
-            [button4 setSelected:NO];
             [self.view addSubview:button4];
         }
         
@@ -147,7 +143,6 @@
             [[button5 layer] setBorderWidth:2.0f];
             [[button5 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:76];
-            [button5 setSelected:NO];
             [self.view addSubview:button5];
         }
         
@@ -164,7 +159,6 @@
             [[button6 layer] setBorderWidth:2.0f];
             [[button6 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:77];
-            [button6 setSelected:NO];
             [self.view addSubview:button6];
         }
         
@@ -180,7 +174,6 @@
             [[button7 layer] setBorderWidth:2.0f];
             [[button7 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:78];
-            [button7 setSelected:NO];
             [self.view addSubview:button7];
         }
         
@@ -197,7 +190,6 @@
             [[button8 layer] setBorderWidth:2.0f];
             [[button8 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:79];
-            [button8 setSelected:NO];
             [self.view addSubview:button8];
         }
         
@@ -214,16 +206,74 @@
             [[button9 layer] setBorderWidth:2.0f];
             [[button9 layer] setBorderColor:[UIColor redColor].CGColor];
             [self.level.outputMatrix setObject:@1 atIndexedSubscript:80];
-            [button9 setSelected:NO];
             [self.view addSubview:button9];
         }
     //Initialise Map
     [self updateMatrix];
+    //Initialise Sounds
+    [self setupAudioPlayers];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) setupAudioPlayers {
+    NSLog(@"Setting audio players");
+    NSString *toneFilePath = [[NSBundle mainBundle] pathForResource:@"Tone" ofType:@"wav"];
+    NSURL *toneFileURL = [[NSURL alloc] initFileURLWithPath:toneFilePath];
+    NSString *blopFilePath = [[NSBundle mainBundle] pathForResource:@"Blop" ofType:@"wav"];
+    NSURL *blopFileURL = [[NSURL alloc] initFileURLWithPath:blopFilePath];
+    NSString *clickFilePath = [[NSBundle mainBundle] pathForResource:@"Click" ofType:@"wav"];
+    NSURL *clickFileURL = [[NSURL alloc] initFileURLWithPath:clickFilePath];
+    NSString *whooshFilePath = [[NSBundle mainBundle] pathForResource:@"Whoosh" ofType:@"wav"];
+    NSURL *whooshFileURL = [[NSURL alloc] initFileURLWithPath:whooshFilePath];
+    
+    self.tone = [[AVAudioPlayer alloc] initWithContentsOfURL:toneFileURL error:nil];
+    [self.tone prepareToPlay];
+    self.blop = [[AVAudioPlayer alloc] initWithContentsOfURL:blopFileURL error:nil];
+    [self.blop prepareToPlay];
+    self.click = [[AVAudioPlayer alloc] initWithContentsOfURL:clickFileURL error:nil];
+    [self.click prepareToPlay];
+    self.whoosh = [[AVAudioPlayer alloc] initWithContentsOfURL:whooshFileURL error:nil];
+    [self.whoosh prepareToPlay];
+}
+
+- (void) playTone {
+    //Check for sound overlap
+    if ([self.tone isPlaying]) {
+        [self.tone stop];
+        self.tone.currentTime = 0.0;
+    }
+    [self.tone play];
+}
+
+- (void) playBlop {
+    //Check for sound overlap
+    if ([self.blop isPlaying]) {
+        [self.blop stop];
+        self.blop.currentTime = 0.0;
+    }
+    [self.blop play];
+}
+
+- (void) playClick {
+    //Check for sound overlap
+    if ([self.click isPlaying]) {
+        [self.click stop];
+        self.click.currentTime = 0.0;
+    }
+    [self.click play];
+}
+
+- (void) playWhoosh {
+    //Check for sound overlap
+    if ([self.whoosh isPlaying]) {
+        [self.whoosh stop];
+        self.whoosh.currentTime = 0.0;
+    }
+    [self.whoosh play];
 }
 
 #pragma mark Button Pressed Function
@@ -237,6 +287,7 @@
         UIImage *onImage = [UIImage imageNamed:@"ButtonOn.png"];
         [sender setImage:onImage forState:UIControlStateNormal];
         [sender setSelected:NO];
+        [self playClick];
     } else {
         NSLog(@"Button with index %li off",(long)index);
         [self.level.outputMatrix setObject:@1 atIndexedSubscript:index];
@@ -244,6 +295,7 @@
         UIImage *offImage = [UIImage imageNamed:@"ButtonOff.png"];
         [sender setImage:offImage forState:UIControlStateNormal];
         [sender setSelected:YES];
+        [self playClick];
     }
     [self updateMatrix];
 }
@@ -274,6 +326,7 @@
                 UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
                 bulb.image=[UIImage imageNamed:@"bulbOn.png"];
                 [self.view addSubview:bulb];
+                [self playBlop];
             }
         } else {
             if ([self.level.outputMatrix[i] isEqual:@10]) {
@@ -327,7 +380,8 @@
                             if (([self.level.outputMatrix[i-9]  isEqual: @1])||([self.level.outputMatrix[i+1]  isEqual: @1])||
                                 ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
                                 ([self.level.outputMatrix[i+9]  isEqual: @5])||([self.level.outputMatrix[i+9]  isEqual: @6])||
-                                ([self.level.outputMatrix[i+9]  isEqual: @7])) {
+                                ([self.level.outputMatrix[i+9]  isEqual: @7])||([self.level.outputMatrix[i+9]  isEqual: @8])||
+                                ([self.level.outputMatrix[i+9]  isEqual: @11])) {
                                 [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
                                 updateRequired = true;
                             } else {
@@ -395,11 +449,39 @@
                                     } else {
                                         //NAND Gate
                                         if ([self.level.outputMatrix[i] isEqual: @8]) {
-                                            
+                                            UIImageView *nandGate =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                            nandGate.image=[UIImage imageNamed:@"NANDGate.png"];
+                                            [self.view addSubview:nandGate];
+                                            if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))&&
+                                                (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
+                                                if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                                    [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                                    updateRequired = true;
+                                                }
+                                            } else {
+                                                if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                                    [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                                    updateRequired = true;
+                                                }
+                                            }
                                         } else {
                                             //NOR Gate
                                             if ([self.level.outputMatrix[i] isEqual: @11]) {
-                                                
+                                                UIImageView *norGate =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                                norGate.image=[UIImage imageNamed:@"NORGate.png"];
+                                                [self.view addSubview:norGate];
+                                                if ((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
+                                                    (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))) {
+                                                    if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                                        [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                                        updateRequired = true;
+                                                    }
+                                                } else {
+                                                    if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                                        [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                                        updateRequired = true;
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -429,11 +511,12 @@
               [(NSNumber *)[self.level.outputMatrix objectAtIndex:(8 + 9*i)] intValue]);
     }
     //Re-call this function if there was a change to the level matrix
-    if ((updateRequired)&&(!(levelComplete))) {
+    if (updateRequired) {
         NSLog(@"Update Required");
         [self updateMatrix];
     } else {
         if (levelComplete) {
+            [self playTone];
             NSLog(@"Level Complete");
             self.level.complete = true;
         }
