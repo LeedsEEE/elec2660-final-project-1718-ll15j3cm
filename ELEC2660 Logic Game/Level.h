@@ -11,7 +11,8 @@
 @interface Level : NSObject
 
 @property (strong, nonatomic) NSString *levelName;
-@property (strong, nonatomic) NSArray *inputMatrix;
+@property (strong, nonatomic) NSNumber *levelNumber;
+@property (strong, nonatomic) NSMutableArray *inputMatrix;
 @property (strong, nonatomic) NSMutableArray *outputMatrix;
 @property (strong, nonatomic) NSString *informationText;
 @property Boolean newInformation;

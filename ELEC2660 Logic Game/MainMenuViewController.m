@@ -26,4 +26,9 @@
 }
 
 
+- (IBAction)clearData:(UIButton *)sender {
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
+    NSLog(@"Save data cleared!");
+}
 @end

@@ -10,6 +10,7 @@
 
 @interface MainMenuViewController : UIViewController
 
+- (IBAction)clearData:(UIButton *)sender;
 
 @end
 

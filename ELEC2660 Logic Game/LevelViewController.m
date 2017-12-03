@@ -56,7 +56,11 @@
 
 #pragma mark Generate Level
         //Get level map from the input matrix
-        self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
+        if ([self loadLevelCompleteData]) {
+            self.level.outputMatrix = [self loadLevelMatrixData];
+        } else {
+            self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
+        }
     
         //Get screen dimensions
         CGRect screenRect = [[UIScreen mainScreen] bounds];
@@ -302,7 +306,7 @@
 }
 
 #pragma mark Update Matrix
-//THIS WORKS DO NOT TOUCH
+//These are the rules of the game.
 - (void)updateMatrix {
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     CGFloat screenWidth = screenRect.size.width;
@@ -522,7 +526,37 @@
             [self playTone];
             NSLog(@"Level Complete");
             self.level.complete = true;
+            [self saveData];
         }
     }
 }
+
+-(void) saveData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *levelNum = [NSString stringWithFormat:@"%d",(int)self.level.levelNumber];
+    NSString *levelName = self.level.levelName;
+    [userDefaults setBool:self.level.complete forKey:levelNum];
+    [userDefaults setObject:self.level.outputMatrix forKey:levelName];
+    NSLog(@"Saved");
+}
+
+-(BOOL) loadLevelCompleteData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *levelNum = [NSString stringWithFormat:@"%d",(int)self.level.levelNumber];
+    BOOL levelComplete = [userDefaults boolForKey:levelNum];
+    if (levelComplete) {
+        NSLog(@"Loaded level complete");
+    } else {
+        NSLog(@"Loaded level not complete");
+    }
+    return levelComplete;
+}
+
+-(NSMutableArray*) loadLevelMatrixData {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString *levelName = self.level.levelName;
+    NSMutableArray *storedMatrix = [userDefaults objectForKey:levelName];
+    return storedMatrix;
+}
+
 @end

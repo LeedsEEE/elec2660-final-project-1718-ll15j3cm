@@ -53,10 +53,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"LevelCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    bool levelComplete = false;
     if (indexPath.section == 0) {
         Level *tempLevel = [self.data.levels objectAtIndex:indexPath.row];
         cell.textLabel.text = tempLevel.levelName;
+        levelComplete = tempLevel.complete;
+        if (levelComplete) {
+            cell.detailTextLabel.text = @"Complete!";
+        } else {
+            cell.detailTextLabel.text = @"";
+        }
     }
     
     return cell;
