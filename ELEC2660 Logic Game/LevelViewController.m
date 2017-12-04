@@ -68,7 +68,7 @@
     //Create buttons code
     for (int i = 0; i <= 80; i++) {
         if ([self.level.outputMatrix[i]  isEqual: @1]) {
-            //create button
+            //create off button
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
             [button setTag:i];
             [button addTarget:self
@@ -77,7 +77,28 @@
             float xcoord = ((i+1)%9);
             button.frame = CGRectMake((screenWidth*(xcoord/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
             [[button layer] setBorderWidth:2.0f];
+            [[button layer] setBorderColor:[UIColor redColor].CGColor];
+            UIImage *offImage = [UIImage imageNamed:@"ButtonOff.png"];
+            [button setImage:offImage forState:UIControlStateNormal];
+            [button setSelected:YES];
             [self.view addSubview:button];
+        } else {
+            if ([self.level.outputMatrix[i]  isEqual: @2]) {
+                //create on button (mainly for when displaying a completed level)
+                UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+                [button setTag:i];
+                [button addTarget:self
+                           action:@selector(buttonPressed:)
+                 forControlEvents:UIControlEventTouchUpInside];
+                float xcoord = ((i+1)%9);
+                button.frame = CGRectMake((screenWidth*(xcoord/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
+                [[button layer] setBorderWidth:2.0f];
+                [[button layer] setBorderColor:[UIColor greenColor].CGColor];
+                UIImage *onImage = [UIImage imageNamed:@"ButtonOn.png"];
+                [button setImage:onImage forState:UIControlStateNormal];
+                [button setSelected:NO];
+                [self.view addSubview:button];
+            }
         }
     }
     
