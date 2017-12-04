@@ -59,13 +59,14 @@
         cell.textLabel.text = tempLevel.levelName;
         levelComplete = tempLevel.complete;
         //Code learned from https://stackoverflow.com/questions/19634426/how-to-save-nsmutablearray-in-nsuserdefaults
+        //Read level complete data from userDefaults
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *levelNum = [NSString stringWithFormat:@"%d",(int)tempLevel.levelNumber];
         BOOL levelComplete = [userDefaults boolForKey:levelNum];
         if (levelComplete) {
             //Disable Cell
             cell.detailTextLabel.text = @"Complete!";
-            cell.userInteractionEnabled = false;
+            //cell.userInteractionEnabled = false;
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
             cell.textLabel.enabled = false;
         } else {

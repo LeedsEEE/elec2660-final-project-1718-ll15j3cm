@@ -20,7 +20,7 @@
     
     self.levelName.text = self.level.levelName;
 
-#pragma mark Generate Level
+    #pragma mark Generate Level
     //Get level map from the input matrix or savedata
     if ([self loadLevelCompleteData]) {
         self.level.outputMatrix = [self loadLevelMatrixData];
@@ -467,11 +467,13 @@
                                handler:^(UIAlertAction *action)
                                {
                                    NSLog(@"OK Action");
+                                   //force return to table screen
                                    [self.navigationController popToRootViewControllerAnimated:YES];
                                }];
     //add buttons to controller
     [alertController addAction:okAction];
     //create alert view
+    [self playWhoosh];
     [self presentViewController:alertController animated:YES completion:nil];
     
 }

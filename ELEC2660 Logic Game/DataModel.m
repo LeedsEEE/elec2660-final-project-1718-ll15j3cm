@@ -27,7 +27,7 @@ Data model notes:
     9 - light OFF
    10 - light ON
    11 - NOR gate
-   99 - Wire TURNED OFF STATE (Decays to 3)
+   99 - Wire TURNED OFF STATE (Don't place these)
  
  newInformation - Is there a tutorial screen before this level?
  
@@ -309,6 +309,66 @@ Data model notes:
         level9.informationText = @"This level introduces the NOR gate! Turn on either of the inputs to cause the output to turn off!";
         level9.complete = false;
         
+        //Level 10
+        self.levels = [NSMutableArray array];
+        Level *level10 = [[Level alloc] init];
+        level10.levelNumber = @10;
+        level10.levelName = @"Level 10";
+        //Pre defined and non-changable level layout
+        level10.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                              @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                              @0,@0,@9,@0,@0,@9,@0,@0,@0,
+                              @0,@0,@3,@0,@0,@3,@0,@0,@0,
+                              @0,@3,@8,@3,@3,@5,@3,@0,@0,
+                              @0,@7,@0,@3,@0,@0,@3,@0,@0,
+                              @0,@3,@0,@3,@0,@0,@3,@0,@0,
+                              @0,@3,@3,@5,@3,@0,@3,@0,@0,
+                              @0,@3,@0,@0,@3,@0,@3,@0,@0,
+                              @0,@1,@0,@0,@1,@0,@1,@0,@0,nil];
+        level10.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level10.newInformation = false;
+        level10.informationText = @"";
+        level10.complete = false;
+        
+        //Level 11
+        self.levels = [NSMutableArray array];
+        Level *level11 = [[Level alloc] init];
+        level11.levelNumber = @11;
+        level11.levelName = @"Level 11";
+        //Pre defined and non-changable level layout
+        level11.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@9,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@0,@0,@0,@0,
+                               @0,@3,@3,@11,@3,@3,@0,@0,@0,
+                               @0,@3,@0,@0,@0,@3,@0,@0,@0,
+                               @0,@3,@0,@0,@0,@3,@0,@0,@0,
+                               @0,@3,@0,@0,@3,@8,@3,@0,@0,
+                               @0,@3,@0,@0,@3,@0,@3,@0,@0,
+                               @0,@2,@0,@0,@1,@0,@1,@0,@0,nil];
+        level11.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level11.newInformation = false;
+        level11.informationText = @"";
+        level11.complete = false;
+        
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
         [self.levels addObject:level2]; //index 1
@@ -319,6 +379,8 @@ Data model notes:
         [self.levels addObject:level7]; //index 6
         [self.levels addObject:level8]; //index 7
         [self.levels addObject:level9]; //index 8
+        [self.levels addObject:level10]; //index 9
+        [self.levels addObject:level11]; //index 10
     }
     return self;
 }
