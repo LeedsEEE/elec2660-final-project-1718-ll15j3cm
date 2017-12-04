@@ -24,6 +24,7 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +33,6 @@
 }
 
 #pragma mark - Table view data source
-
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
@@ -58,13 +58,20 @@
         Level *tempLevel = [self.data.levels objectAtIndex:indexPath.row];
         cell.textLabel.text = tempLevel.levelName;
         levelComplete = tempLevel.complete;
+        //Code learned from https://stackoverflow.com/questions/19634426/how-to-save-nsmutablearray-in-nsuserdefaults
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        NSString *levelNum = [NSString stringWithFormat:@"%d",(int)tempLevel.levelNumber];
+        BOOL levelComplete = [userDefaults boolForKey:levelNum];
         if (levelComplete) {
+            //Disable Cell
             cell.detailTextLabel.text = @"Complete!";
+            cell.userInteractionEnabled = false;
+            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.textLabel.enabled = false;
         } else {
             cell.detailTextLabel.text = @"";
         }
     }
-    
     return cell;
 }
 

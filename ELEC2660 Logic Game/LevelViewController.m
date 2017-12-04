@@ -21,193 +21,66 @@
     self.levelName.text = self.level.levelName;
 
 #pragma mark Generate Level
-        //Get level map from the input matrix or savedata
-        if ([self loadLevelCompleteData]) {
-            self.level.outputMatrix = [self loadLevelMatrixData];
-        } else {
-            self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
-            //Create level start Alert
-            if (self.level.newInformation == true) {
-                //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
-                //Create alert controller
-                UIAlertController *alertController = [UIAlertController
-                                                      alertControllerWithTitle:@"Level Tips"
-                                                      message:self.level.informationText
-                                                      preferredStyle:UIAlertControllerStyleAlert];
-                //create cancel button
-                UIAlertAction *cancelAction = [UIAlertAction
-                                               actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                               style:UIAlertActionStyleCancel
-                                               handler:^(UIAlertAction *action)
-                                               {
-                                                   NSLog(@"Cancel action");
-                                               }];
-                //create ok button
-                UIAlertAction *okAction = [UIAlertAction
-                                           actionWithTitle:NSLocalizedString(@"OK", @"OK action")
-                                           style:UIAlertActionStyleDefault
+    //Get level map from the input matrix or savedata
+    if ([self loadLevelCompleteData]) {
+        self.level.outputMatrix = [self loadLevelMatrixData];
+    } else {
+        self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
+        //Create level start Alert
+        if (self.level.newInformation == true) {
+            //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
+            //Create alert controller
+            UIAlertController *alertController = [UIAlertController
+                                                  alertControllerWithTitle:@"Level Tips"
+                                                  message:self.level.informationText
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+            //create cancel button
+            UIAlertAction *cancelAction = [UIAlertAction
+                                           actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                           style:UIAlertActionStyleCancel
                                            handler:^(UIAlertAction *action)
                                            {
-                                               NSLog(@"OK action");
+                                               NSLog(@"Cancel action");
                                            }];
-                //add buttons to controller
-                [alertController addAction:cancelAction];
-                [alertController addAction:okAction];
-                //create alert view
-                [self presentViewController:alertController animated:YES completion:nil];
-            }
+            //create ok button
+            UIAlertAction *okAction = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           NSLog(@"OK action");
+                                       }];
+            //add buttons to controller
+            [alertController addAction:cancelAction];
+            [alertController addAction:okAction];
+            //create alert view
+            [self presentViewController:alertController animated:YES completion:nil];
         }
+    }
+
+    //Get screen dimensions
+    CGRect screenRect = [[UIScreen mainScreen] bounds];
+    CGFloat screenWidth = screenRect.size.width;
+    CGFloat screenHeight = screenRect.size.height;
+    NSLog(@"Screen Height = %f",screenHeight);
+    NSLog(@"Screen Width = %f",screenWidth);
+
+    //Create buttons code
+    for (int i = 0; i <= 80; i++) {
+        if ([self.level.outputMatrix[i]  isEqual: @1]) {
+            //create button
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            [button setTag:i];
+            [button addTarget:self
+                       action:@selector(buttonPressed:)
+             forControlEvents:UIControlEventTouchUpInside];
+            float xcoord = ((i+1)%9);
+            button.frame = CGRectMake((screenWidth*(xcoord/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
+            [[button layer] setBorderWidth:2.0f];
+            [self.view addSubview:button];
+        }
+    }
     
-        //Get screen dimensions
-        CGRect screenRect = [[UIScreen mainScreen] bounds];
-        CGFloat screenWidth = screenRect.size.width;
-        CGFloat screenHeight = screenRect.size.height;
-        NSLog(@"Screen Height = %f",screenHeight);
-        NSLog(@"Screen Width = %f",screenWidth);
-        
-        //Get the buttons on the bottom row and add them to the screen
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:72] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:72] intValue] == 1) {
-            //Following code learned from https://stackoverflow.com/questions/1378765/how-do-i-create-a-basic-uibutton-programmatically
-            //buttons (layer 9)
-            UIButton *button1 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button1 setTag:72];
-            [button1 addTarget:self
-                        action:@selector(buttonPressed:)
-                forControlEvents:UIControlEventTouchUpInside];
-            [button1 setTitle:@"Button 1" forState:UIControlStateNormal];
-            button1.frame = CGRectMake((screenWidth*(1.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button1 layer] setBorderWidth:2.0f];
-            [[button1 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:72];
-            [self.view addSubview:button1];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:73] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:73] intValue] == 1) {
-            UIButton *button2 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button2 setTag:73];
-            [button2 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button2 setTitle:@"Button 2" forState:UIControlStateNormal];
-            button2.frame = CGRectMake((screenWidth*(2.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button2 layer] setBorderWidth:2.0f];
-            [[button2 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:73];
-            [self.view addSubview:button2];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:74] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:74] intValue] == 1) {
-            UIButton *button3 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button3 setTag:74];
-            [button3 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button3 setTitle:@"Button 3" forState:UIControlStateNormal];
-            button3.frame = CGRectMake((screenWidth*(3.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button3 layer] setBorderWidth:2.0f];
-            [[button3 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:74];
-            [self.view addSubview:button3];
-        }
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:75] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:75] intValue] == 1) {
-            UIButton *button4 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button4 setTag:75];
-            [button4 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button4 setTitle:@"Button 4" forState:UIControlStateNormal];
-            button4.frame = CGRectMake((screenWidth*(4.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button4 layer] setBorderWidth:2.0f];
-            [[button4 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:75];
-            [self.view addSubview:button4];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:76] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:76] intValue] == 1) {
-            UIButton *button5 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button5 setTag:76];
-            [button5 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button5 setTitle:@"Button 5" forState:UIControlStateNormal];
-            button5.frame = CGRectMake((screenWidth*(5.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button5 layer] setBorderWidth:2.0f];
-            [[button5 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:76];
-            [self.view addSubview:button5];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:77] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:77] intValue] == 1) {
-            UIButton *button6 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button6 setTag:77];
-            [button6 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button6 setTitle:@"Button 6" forState:UIControlStateNormal];
-            button6.frame = CGRectMake((screenWidth*(6.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button6 layer] setBorderWidth:2.0f];
-            [[button6 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:77];
-            [self.view addSubview:button6];
-        }
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:78] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:78] intValue] == 1) {
-            UIButton *button7 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button7 setTag:78];
-            [button7 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button7 setTitle:@"Button 7" forState:UIControlStateNormal];
-            button7.frame = CGRectMake((screenWidth*(7.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button7 layer] setBorderWidth:2.0f];
-            [[button7 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:78];
-            [self.view addSubview:button7];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:79] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:79] intValue] == 1) {
-            UIButton *button8 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button8 setTag:79];
-            [button8 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button8 setTitle:@"Button 8" forState:UIControlStateNormal];
-            button8.frame = CGRectMake((screenWidth*(8.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button8 layer] setBorderWidth:2.0f];
-            [[button8 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:79];
-            [self.view addSubview:button8];
-        }
-        
-        
-        NSLog(@"currentLevel: %d", [(NSNumber *)[self.level.outputMatrix objectAtIndex:80] intValue]);
-        if ([(NSNumber *)[self.level.outputMatrix objectAtIndex:80] intValue] == 1) {
-            UIButton *button9 = [UIButton buttonWithType:UIButtonTypeCustom];
-            [button9 setTag:80];
-            [button9 addTarget:self
-                        action:@selector(buttonPressed:)
-              forControlEvents:UIControlEventTouchUpInside];
-            [button9 setTitle:@"Button 9" forState:UIControlStateNormal];
-            button9.frame = CGRectMake((screenWidth*(9.00/11.00)), (screenHeight*(9.00/11.00)), (screenWidth/11), (screenHeight/11));
-            [[button9 layer] setBorderWidth:2.0f];
-            [[button9 layer] setBorderColor:[UIColor redColor].CGColor];
-            [self.level.outputMatrix setObject:@1 atIndexedSubscript:80];
-            [self.view addSubview:button9];
-        }
     //Initialise Map
     [self updateMatrix];
     //Initialise Sounds
@@ -523,6 +396,7 @@
             NSLog(@"Level Complete");
             self.level.complete = true;
             [self saveData];
+            [self endLevel];
         }
     }
 }
@@ -556,6 +430,29 @@
     NSString *levelName = self.level.levelName;
     NSMutableArray *storedMatrix = [userDefaults objectForKey:levelName];
     return storedMatrix;
+}
+
+-(void) endLevel {
+    //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
+    //Create alert controller
+    UIAlertController *alertController = [UIAlertController
+                                          alertControllerWithTitle:@"Level Complete!"
+                                          message:@"Congratulations!"
+                                          preferredStyle:UIAlertControllerStyleAlert];
+    //create ok button
+    UIAlertAction *okAction = [UIAlertAction
+                               actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction *action)
+                               {
+                                   NSLog(@"OK Action");
+                                   [self.navigationController popToRootViewControllerAnimated:YES];
+                               }];
+    //add buttons to controller
+    [alertController addAction:okAction];
+    //create alert view
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 @end
