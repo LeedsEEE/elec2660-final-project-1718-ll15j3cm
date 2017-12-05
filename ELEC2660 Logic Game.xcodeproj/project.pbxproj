@@ -34,7 +34,6 @@
 		1AC12FCB1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FCA1FC7535200C67609 /* ELEC2660_Logic_GameUITests.m */; };
 		1AC12FDA1FC7697100C67609 /* LevelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FD91FC7697100C67609 /* LevelTableViewController.m */; };
 		412C2D991FD170E00056CCE3 /* NOTGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 412C2D981FD170DF0056CCE3 /* NOTGate.png */; };
-		4185B7C81FC8503A00291C09 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185B7C71FC8503A00291C09 /* SettingsViewController.m */; };
 		4185B7CB1FC8516500291C09 /* Level.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185B7CA1FC8516500291C09 /* Level.m */; };
 		4185B7CE1FC85E6900291C09 /* DataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4185B7CD1FC85E6900291C09 /* DataModel.m */; };
 /* End PBXBuildFile section */
@@ -94,8 +93,6 @@
 		1AC12FD81FC7697100C67609 /* LevelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LevelTableViewController.h; sourceTree = "<group>"; };
 		1AC12FD91FC7697100C67609 /* LevelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelTableViewController.m; sourceTree = "<group>"; };
 		412C2D981FD170DF0056CCE3 /* NOTGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NOTGate.png; sourceTree = "<group>"; };
-		4185B7C61FC8503A00291C09 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
-		4185B7C71FC8503A00291C09 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		4185B7C91FC8516500291C09 /* Level.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Level.h; sourceTree = "<group>"; };
 		4185B7CA1FC8516500291C09 /* Level.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Level.m; sourceTree = "<group>"; };
 		4185B7CC1FC85E6900291C09 /* DataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModel.h; sourceTree = "<group>"; };
@@ -191,8 +188,6 @@
 				4185B7CD1FC85E6900291C09 /* DataModel.m */,
 				1AC12FAB1FC7535200C67609 /* LevelViewController.h */,
 				1AC12FAC1FC7535200C67609 /* LevelViewController.m */,
-				4185B7C61FC8503A00291C09 /* SettingsViewController.h */,
-				4185B7C71FC8503A00291C09 /* SettingsViewController.m */,
 				1AC12FAE1FC7535200C67609 /* Main.storyboard */,
 				4185B7C91FC8516500291C09 /* Level.h */,
 				4185B7CA1FC8516500291C09 /* Level.m */,
@@ -386,7 +381,6 @@
 				4185B7CE1FC85E6900291C09 /* DataModel.m in Sources */,
 				1AC12FA71FC7535200C67609 /* AppDelegate.m in Sources */,
 				1AC12FAA1FC7535200C67609 /* MainMenuViewController.m in Sources */,
-				4185B7C81FC8503A00291C09 /* SettingsViewController.m in Sources */,
 				1AC12FDA1FC7697100C67609 /* LevelTableViewController.m in Sources */,
 				4185B7CB1FC8516500291C09 /* Level.m in Sources */,
 				1AC12FA41FC7535200C67609 /* main.m in Sources */,

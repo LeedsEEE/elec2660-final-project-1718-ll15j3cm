@@ -400,6 +400,36 @@ Data model notes:
         level12.informationText = @"This level introduces the last of the logic gates, the XOR gate! Turn either side on to output a 1 but if neither sides or both sides are on a 0 will be output!";
         level12.complete = false;
         
+        //Level 13
+        self.levels = [NSMutableArray array];
+        Level *level13 = [[Level alloc] init];
+        level13.levelNumber = @13;
+        level13.levelName = @"Level 13";
+        //Pre defined and non-changable level layout
+        level13.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level13.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level13.newInformation = false;
+        level13.informationText = @"";
+        level13.complete = false;
+        
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
         [self.levels addObject:level2]; //index 1
@@ -413,6 +443,7 @@ Data model notes:
         [self.levels addObject:level10]; //index 9
         [self.levels addObject:level11]; //index 10
         [self.levels addObject:level12]; //index 11
+        [self.levels addObject:level13]; //index 12
     }
     return self;
 }

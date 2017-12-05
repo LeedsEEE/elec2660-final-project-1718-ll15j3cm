@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -36,7 +36,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.10022176057100296" green="0.51899605989456177" blue="0.22456544637680054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="vtI-XL-ZkI" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nks-3I-Aq2"/>
                             <constraint firstItem="EuV-pW-bvy" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="XUH-DR-a6v"/>
@@ -52,26 +52,6 @@
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="-769.56521739130437"/>
         </scene>
-        <!--Settings-->
-        <scene sceneID="CNM-Cm-6cU">
-            <objects>
-                <viewController id="LwD-VL-N7N" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Joh-kn-20k"/>
-                        <viewControllerLayoutGuide type="bottom" id="5ID-Le-rIU"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="D6b-My-FFg">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="4n6-tL-ffu"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="elw-y4-IWt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="785" y="573"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -85,7 +65,6 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="i3Z-i6-1jz" kind="relationship" relationship="viewControllers" id="CY4-Fb-BWn"/>
-                        <segue destination="LwD-VL-N7N" kind="relationship" relationship="viewControllers" id="oeB-QW-Poh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -106,7 +85,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="REz-mn-4Kl" id="BWw-nM-XtN">
-                                    <frame key="frameInset" width="342" height="44"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OhS-Bf-uRS">
@@ -125,7 +104,7 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.1002217606" green="0.51899605989999997" blue="0.22456544640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="HDx-L9-jjY" kind="push" identifier="levelSegue" id="Xd9-N4-b1A"/>
                                 </connections>
@@ -160,7 +139,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.1002217606" green="0.51899605989999997" blue="0.22456544640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1gq-cE-69e" firstAttribute="top" secondItem="qOh-uh-1Ff" secondAttribute="bottom" id="l5F-9Y-Idt"/>
                             <constraint firstItem="1gq-cE-69e" firstAttribute="centerX" secondItem="pTQ-eg-G9g" secondAttribute="centerX" id="nUO-5s-3gk"/>
