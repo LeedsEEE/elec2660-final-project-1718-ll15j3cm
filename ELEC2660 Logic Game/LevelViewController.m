@@ -54,6 +54,7 @@
             [alertController addAction:cancelAction];
             [alertController addAction:okAction];
             //create alert view
+            [self playWhoosh];
             [self presentViewController:alertController animated:YES completion:nil];
         }
     }
@@ -247,7 +248,7 @@
                         ([self.level.outputMatrix[i-1]  isEqual: @1])||([self.level.outputMatrix[i+9]  isEqual: @1])||
                         ([self.level.outputMatrix[i+9]  isEqual: @5])||([self.level.outputMatrix[i+9]  isEqual: @6])||
                         ([self.level.outputMatrix[i+9]  isEqual: @7])||([self.level.outputMatrix[i+9]  isEqual: @8])||
-                        ([self.level.outputMatrix[i+9]  isEqual: @11])) {
+                        ([self.level.outputMatrix[i+9]  isEqual: @11]||([self.level.outputMatrix[i+9]  isEqual: @12]))) {
                         [self.level.outputMatrix setObject:@3 atIndexedSubscript:i];
                         updateRequired = true;
                     } else {
@@ -349,34 +350,56 @@
                                             }
                                         }
                                     } else {
-                                        //Check for bulbs being LIT
-                                        if ([self.level.outputMatrix[i] isEqual:@9]) {
-                                            UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-                                            bulb.image=[UIImage imageNamed:@"bulbOff.png"];
-                                            [self.view addSubview:bulb];
-                                            if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
-                                                ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
-                                                ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
-                                                ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2])) {
-                                                [self.level.outputMatrix setObject:@10 atIndexedSubscript:i];
-                                                updateRequired = true;
-                                                UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-                                                bulb.image=[UIImage imageNamed:@"bulbOn.png"];
-                                                [self.view addSubview:bulb];
-                                                [self playBlop];
+                                        //XOR Gate - logic: if either side wire is on output a 1 else if neither or both are on, output a 0
+                                        if ([self.level.outputMatrix[i] isEqual: @12]) {
+                                            UIImageView *xorGate = [[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                            xorGate.image=[UIImage imageNamed:@"XORGate.png"];
+                                            [self.view addSubview:xorGate];
+                                            if (((([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))||
+                                                (([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])))&&
+                                                (!((([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2]))&&
+                                                (([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2]))))) {
+                                                if ([self.level.outputMatrix[i-9] isEqual:@3]) {
+                                                    [self.level.outputMatrix setObject:@4 atIndexedSubscript:(i-9)];
+                                                    updateRequired = true;
+                                                }
+                                            } else {
+                                                if ([self.level.outputMatrix[i-9] isEqual:@4]) {
+                                                    [self.level.outputMatrix setObject:@99 atIndexedSubscript:(i-9)];
+                                                    updateRequired = true;
+                                                }
                                             }
                                         } else {
-                                            //Check for bulbs being unlit
-                                            if ([self.level.outputMatrix[i] isEqual:@10]) {
+                                            
+                                            //Check for bulbs being LIT
+                                            if ([self.level.outputMatrix[i] isEqual:@9]) {
                                                 UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
-                                                bulb.image=[UIImage imageNamed:@"bulbOn.png"];
+                                                bulb.image=[UIImage imageNamed:@"bulbOff.png"];
                                                 [self.view addSubview:bulb];
-                                                if (!(([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
-                                                      ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
-                                                      ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
-                                                      ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2]))) {
-                                                    [self.level.outputMatrix setObject:@9 atIndexedSubscript:i];
+                                                if (([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
+                                                    ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
+                                                    ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
+                                                    ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2])) {
+                                                    [self.level.outputMatrix setObject:@10 atIndexedSubscript:i];
                                                     updateRequired = true;
+                                                    UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                                    bulb.image=[UIImage imageNamed:@"bulbOn.png"];
+                                                    [self.view addSubview:bulb];
+                                                    [self playBlop];
+                                                }
+                                            } else {
+                                                //Check for bulbs being unlit
+                                                if ([self.level.outputMatrix[i] isEqual:@10]) {
+                                                    UIImageView *bulb =[[UIImageView alloc] initWithFrame:CGRectMake(xcoord, ycoord, (screenWidth/11), (screenHeight/11))];
+                                                    bulb.image=[UIImage imageNamed:@"bulbOn.png"];
+                                                    [self.view addSubview:bulb];
+                                                    if (!(([self.level.outputMatrix[i-9]  isEqual: @4])||([self.level.outputMatrix[i-9]  isEqual: @2])||
+                                                          ([self.level.outputMatrix[i+1]  isEqual: @4])||([self.level.outputMatrix[i+1]  isEqual: @2])||
+                                                          ([self.level.outputMatrix[i-1]  isEqual: @4])||([self.level.outputMatrix[i-1]  isEqual: @2])||
+                                                          ([self.level.outputMatrix[i+9]  isEqual: @4])||([self.level.outputMatrix[i+9]  isEqual: @2]))) {
+                                                        [self.level.outputMatrix setObject:@9 atIndexedSubscript:i];
+                                                        updateRequired = true;
+                                                    }
                                                 }
                                             }
                                         }
@@ -475,7 +498,6 @@
     //create alert view
     [self playWhoosh];
     [self presentViewController:alertController animated:YES completion:nil];
-    
 }
 
 @end

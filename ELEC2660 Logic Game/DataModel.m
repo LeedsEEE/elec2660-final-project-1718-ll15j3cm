@@ -27,6 +27,7 @@ Data model notes:
     9 - light OFF
    10 - light ON
    11 - NOR gate
+   12 - XOR gate
    99 - Wire TURNED OFF STATE (Don't place these)
  
  newInformation - Is there a tutorial screen before this level?
@@ -80,11 +81,11 @@ Data model notes:
                                @0,@0,@9,@0,@0,@0,@9,@0,@0,
                                @0,@0,@3,@0,@0,@0,@3,@0,@0,
                                @0,@0,@3,@0,@0,@0,@3,@0,@0,
+                               @0,@0,@7,@0,@0,@0,@3,@0,@0,
                                @0,@0,@3,@0,@0,@0,@3,@0,@0,
                                @0,@0,@3,@0,@0,@0,@3,@0,@0,
                                @0,@0,@3,@0,@0,@0,@3,@0,@0,
-                               @0,@0,@3,@0,@0,@0,@3,@0,@0,
-                               @0,@0,@1,@0,@0,@0,@1,@0,@0,nil];
+                               @0,@0,@2,@0,@0,@0,@1,@0,@0,nil];
         level2.outputMatrix = [[NSMutableArray alloc] initWithObjects:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
@@ -95,8 +96,8 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
-        level2.newInformation = false;
-        level2.informationText = @"";
+        level2.newInformation = true;
+        level2.informationText = @"This level introduces the NOT gate! The output of the NOT gate will always be the opposite of the input!";
         level2.complete = false;
         
         //Level 3
@@ -369,6 +370,36 @@ Data model notes:
         level11.informationText = @"";
         level11.complete = false;
         
+        //Level 12
+        self.levels = [NSMutableArray array];
+        Level *level12 = [[Level alloc] init];
+        level12.levelNumber = @12;
+        level12.levelName = @"Level 12";
+        //Pre defined and non-changable level layout
+        level12.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@9,@0,@9,@0,@9,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@3,@0,@0,
+                               @0,@3,@8,@3,@5,@3,@5,@3,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@3,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@3,@0,
+                               @0,@3,@3,@12,@3,@3,@0,@3,@0,
+                               @0,@3,@0,@0,@0,@3,@0,@3,@0,
+                               @0,@1,@0,@0,@0,@1,@0,@1,@0,nil];
+        level12.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level12.newInformation = true;
+        level12.informationText = @"This level introduces the last of the logic gates, the XOR gate! Turn either side on to output a 1 but if neither sides or both sides are on a 0 will be output!";
+        level12.complete = false;
+        
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
         [self.levels addObject:level2]; //index 1
@@ -381,6 +412,7 @@ Data model notes:
         [self.levels addObject:level9]; //index 8
         [self.levels addObject:level10]; //index 9
         [self.levels addObject:level11]; //index 10
+        [self.levels addObject:level12]; //index 11
     }
     return self;
 }

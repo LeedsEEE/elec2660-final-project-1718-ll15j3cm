@@ -24,6 +24,11 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    //When the view appears, reload the data to update whether the level has been completed or not
+    NSLog(@"TableViewLoaded");
     [self.tableView reloadData];
 }
 
@@ -36,6 +41,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
+    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -71,6 +77,8 @@
             cell.textLabel.enabled = false;
         } else {
             cell.detailTextLabel.text = @"";
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+            cell.textLabel.enabled = true;
         }
     }
     return cell;

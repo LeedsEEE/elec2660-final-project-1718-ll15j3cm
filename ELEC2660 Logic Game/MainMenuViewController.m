@@ -30,7 +30,7 @@
     //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
     //Create alert controller
     UIAlertController *alertController = [UIAlertController
-                                          alertControllerWithTitle:@"Level Tips"
+                                          alertControllerWithTitle:@"Clear Save Data"
                                           message:@"Delete all save data?"
                                           preferredStyle:UIAlertControllerStyleAlert];
     //create cancel button
