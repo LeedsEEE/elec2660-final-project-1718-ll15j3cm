@@ -68,10 +68,12 @@
         //Read level complete data from userDefaults
         NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
         NSString *levelNum = [NSString stringWithFormat:@"%d",(int)tempLevel.levelNumber];
+        NSString *levelNumNegative = [NSString stringWithFormat:@"%d",-(int)tempLevel.levelNumber];
         BOOL levelComplete = [userDefaults boolForKey:levelNum];
+        NSInteger stars = [userDefaults integerForKey:levelNumNegative];
         if (levelComplete) {
             //Disable Cell
-            cell.detailTextLabel.text = @"Complete!";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Complete! %ld Stars!",stars];
             //cell.userInteractionEnabled = false;
             cell.selectionStyle = UITableViewCellSelectionStyleGray;
             cell.textLabel.enabled = false;

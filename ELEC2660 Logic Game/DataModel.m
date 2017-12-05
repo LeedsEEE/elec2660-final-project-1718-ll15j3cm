@@ -68,6 +68,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level1.newInformation = true;
         level1.informationText = @"The goal of this game is to enable the output light using the input buttons. Tap an input button to see this in action!";
+        level1.stars = 0;
+        level1.taps = 0;
+        level1.oneStarTaps = 3;
+        level1.twoStarTaps = 2;
+        level1.threeStarTaps = 1;
         level1.complete = false;
         
         //Level 2
@@ -98,6 +103,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level2.newInformation = true;
         level2.informationText = @"This level introduces the NOT gate! The output of the NOT gate will always be the opposite of the input!";
+        level2.stars = 0;
+        level2.taps = 0;
+        level2.oneStarTaps = 6;
+        level2.twoStarTaps = 4;
+        level2.threeStarTaps = 2;
         level2.complete = false;
         
         //Level 3
@@ -128,6 +138,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level3.newInformation = true;
         level3.informationText = @"This level introduces the AND gate! Turn both of it's side wires on to get the top wire to output!";
+        level3.stars = 0;
+        level3.taps = 0;
+        level3.oneStarTaps = 6;
+        level3.twoStarTaps = 4;
+        level3.threeStarTaps = 2;
         level3.complete = false;
         
         //Level 4
@@ -158,6 +173,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level4.newInformation = false;
         level4.informationText = @"";
+        level4.stars = 0;
+        level4.taps = 0;
+        level4.oneStarTaps = 8;
+        level4.twoStarTaps = 6;
+        level4.threeStarTaps = 4;
         level4.complete = false;
         
         //Level 5
@@ -188,6 +208,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level5.newInformation = true;
         level5.informationText = @"This level introduces the OR gate! Turn on either of the adjacent inputs to output a 1!";
+        level5.stars = 0;
+        level5.taps = 0;
+        level5.oneStarTaps = 6;
+        level5.twoStarTaps = 4;
+        level5.threeStarTaps = 2;
         level5.complete = false;
         
         //Level 6
@@ -218,6 +243,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level6.newInformation = false;
         level6.informationText = @"";
+        level6.stars = 0;
+        level6.taps = 0;
+        level6.oneStarTaps = 5;
+        level6.twoStarTaps = 3;
+        level6.threeStarTaps = 1;
         level6.complete = false;
         
         //Level 7
@@ -248,6 +278,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level7.newInformation = false;
         level7.informationText = @"";
+        level7.stars = 0;
+        level7.taps = 0;
+        level7.oneStarTaps = 4;
+        level7.twoStarTaps = 2;
+        level7.threeStarTaps = 1;
         level7.complete = false;
         
         //Level 8
@@ -278,6 +313,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level8.newInformation = true;
         level8.informationText = @"This level introduces the NAND gate! Turn on both inputs to cause the output to turn off!";
+        level8.stars = 0;
+        level8.taps = 0;
+        level8.oneStarTaps = 6;
+        level8.twoStarTaps = 4;
+        level8.threeStarTaps = 2;
         level8.complete = false;
         
         //Level 9
@@ -308,6 +348,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level9.newInformation = true;
         level9.informationText = @"This level introduces the NOR gate! Turn on either of the inputs to cause the output to turn off!";
+        level9.stars = 0;
+        level9.taps = 0;
+        level9.oneStarTaps = 4;
+        level9.twoStarTaps = 2;
+        level9.threeStarTaps = 1;
         level9.complete = false;
         
         //Level 10
@@ -338,6 +383,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level10.newInformation = false;
         level10.informationText = @"";
+        level10.stars = 0;
+        level10.taps = 0;
+        level10.oneStarTaps = 5;
+        level10.twoStarTaps = 4;
+        level10.threeStarTaps = 3;
         level10.complete = false;
         
         //Level 11
@@ -368,6 +418,11 @@ Data model notes:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level11.newInformation = false;
         level11.informationText = @"";
+        level11.stars = 0;
+        level11.taps = 0;
+        level11.oneStarTaps = 6;
+        level11.twoStarTaps = 4;
+        level11.threeStarTaps = 2;
         level11.complete = false;
         
         //Level 12
@@ -398,6 +453,11 @@ Data model notes:
                                 @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level12.newInformation = true;
         level12.informationText = @"This level introduces the last of the logic gates, the XOR gate! Turn either side on to output a 1 but if neither sides or both sides are on a 0 will be output!";
+        level12.stars = 0;
+        level12.taps = 0;
+        level12.oneStarTaps = 4;
+        level12.twoStarTaps = 3;
+        level12.threeStarTaps = 2;
         level12.complete = false;
         
         //Level 13
@@ -408,14 +468,14 @@ Data model notes:
         //Pre defined and non-changable level layout
         level13.inputMatrix = [[NSMutableArray alloc] initWithObjects:
                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,
-                               @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+                               @0,@0,@0,@9,@0,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@0,@0,@0,@0,
+                               @0,@0,@3,@11,@3,@0,@0,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@0,@0,@0,
+                               @0,@3,@8,@3,@12,@3,@0,@0,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@3,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@1,@0,@1,@0,@1,@0,@0,@0,nil];
         level13.outputMatrix = [[NSMutableArray alloc] initWithObjects:
                                 @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
                                 @0,@0,@0,@0,@0,@0,@0,@0,@0,
@@ -428,6 +488,11 @@ Data model notes:
                                 @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
         level13.newInformation = false;
         level13.informationText = @"";
+        level13.stars = 0;
+        level13.taps = 0;
+        level13.oneStarTaps = 6;
+        level13.twoStarTaps = 4;
+        level13.threeStarTaps = 2;
         level13.complete = false;
         
         //Add levels to data model

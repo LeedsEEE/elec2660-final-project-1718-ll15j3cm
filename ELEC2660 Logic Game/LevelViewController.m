@@ -183,6 +183,8 @@
         UIImage *onImage = [UIImage imageNamed:@"ButtonOn.png"];
         [sender setImage:onImage forState:UIControlStateNormal];
         [sender setSelected:NO];
+        self.level.taps += 1;
+        NSLog(@"Number of taps this level: %i",self.level.taps);
         [self playClick];
     } else {
         NSLog(@"Button with index %li off",(long)index);
@@ -191,6 +193,8 @@
         UIImage *offImage = [UIImage imageNamed:@"ButtonOff.png"];
         [sender setImage:offImage forState:UIControlStateNormal];
         [sender setSelected:YES];
+        self.level.taps += 1;
+        NSLog(@"Number of taps this level: %i",self.level.taps);
         [self playClick];
     }
     [self updateMatrix];
@@ -439,8 +443,27 @@
             [self playTone];
             NSLog(@"Level Complete");
             self.level.complete = true;
+            self.level.stars = [self getCalculateStars];
+            NSLog(@"%i",self.level.stars);
             [self saveData];
             [self endLevel];
+        }
+    }
+}
+
+-(int) getCalculateStars {
+    int taps = self.level.taps;
+    if (taps > self.level.oneStarTaps) {
+        return 0;
+    } else {
+        if ((taps <= self.level.oneStarTaps)&&(taps > self.level.twoStarTaps)) {
+            return 1;
+        } else {
+            if ((taps <= self.level.twoStarTaps)&&(taps > self.level.threeStarTaps)) {
+                return 2;
+            } else {
+                return 3;
+            }
         }
     }
 }
@@ -449,9 +472,11 @@
     //Code learned from https://stackoverflow.com/questions/307313/best-way-to-save-data-on-the-iphone
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *levelNum = [NSString stringWithFormat:@"%d",(int)self.level.levelNumber];
+    NSString *levelNumNegative = [NSString stringWithFormat:@"%d",-(int)self.level.levelNumber];
     NSString *levelName = self.level.levelName;
     [userDefaults setBool:self.level.complete forKey:levelNum];
     [userDefaults setObject:self.level.outputMatrix forKey:levelName];
+    [userDefaults setInteger:self.level.stars forKey:levelNumNegative];
     NSLog(@"Saved");
 }
 
