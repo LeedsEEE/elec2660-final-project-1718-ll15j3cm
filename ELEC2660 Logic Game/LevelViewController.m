@@ -26,6 +26,8 @@
         self.level.outputMatrix = [self loadLevelMatrixData];
     } else {
         self.level.outputMatrix = [self.level.inputMatrix mutableCopy];
+        //clear taps for second attempt at the level
+        self.level.taps = 0;
         //Create level start Alert
         if (self.level.newInformation == true) {
             //Code learned from https://useyourloaf.com/blog/uialertcontroller-changes-in-ios-8/
