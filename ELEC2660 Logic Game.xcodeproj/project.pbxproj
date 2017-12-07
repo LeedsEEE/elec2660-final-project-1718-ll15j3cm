@@ -13,7 +13,6 @@
 		1A7F1B591FD3144E00B27E50 /* Tone.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1A7F1B581FD3144E00B27E50 /* Tone.wav */; };
 		1AB984E61FD9AE41009B0BBB /* ANDGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984D81FD9AE41009B0BBB /* ANDGate.png */; };
 		1AB984E71FD9AE41009B0BBB /* Background texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984D91FD9AE41009B0BBB /* Background texture.png */; };
-		1AB984E81FD9AE41009B0BBB /* bulbOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984DA1FD9AE41009B0BBB /* bulbOff.png */; };
 		1AB984E91FD9AE41009B0BBB /* bulbOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984DB1FD9AE41009B0BBB /* bulbOn.png */; };
 		1AB984EA1FD9AE41009B0BBB /* ButtonOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984DC1FD9AE41009B0BBB /* ButtonOff.png */; };
 		1AB984EB1FD9AE41009B0BBB /* ButtonOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984DD1FD9AE41009B0BBB /* ButtonOn.png */; };
@@ -25,6 +24,7 @@
 		1AB984F11FD9AE42009B0BBB /* wireOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984E31FD9AE41009B0BBB /* wireOff.png */; };
 		1AB984F21FD9AE42009B0BBB /* wireOn.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984E41FD9AE41009B0BBB /* wireOn.png */; };
 		1AB984F31FD9AE42009B0BBB /* XORGate.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984E51FD9AE41009B0BBB /* XORGate.png */; };
+		1AB984F51FD9C933009B0BBB /* bulbOff.png in Resources */ = {isa = PBXBuildFile; fileRef = 1AB984F41FD9C933009B0BBB /* bulbOff.png */; };
 		1AC12FA41FC7535200C67609 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA31FC7535200C67609 /* main.m */; };
 		1AC12FA71FC7535200C67609 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA61FC7535200C67609 /* AppDelegate.m */; };
 		1AC12FAA1FC7535200C67609 /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1AC12FA91FC7535200C67609 /* MainMenuViewController.m */; };
@@ -63,7 +63,6 @@
 		1A7F1B581FD3144E00B27E50 /* Tone.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Tone.wav; sourceTree = "<group>"; };
 		1AB984D81FD9AE41009B0BBB /* ANDGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ANDGate.png; sourceTree = "<group>"; };
 		1AB984D91FD9AE41009B0BBB /* Background texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background texture.png"; sourceTree = "<group>"; };
-		1AB984DA1FD9AE41009B0BBB /* bulbOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulbOff.png; sourceTree = "<group>"; };
 		1AB984DB1FD9AE41009B0BBB /* bulbOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulbOn.png; sourceTree = "<group>"; };
 		1AB984DC1FD9AE41009B0BBB /* ButtonOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonOff.png; sourceTree = "<group>"; };
 		1AB984DD1FD9AE41009B0BBB /* ButtonOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonOn.png; sourceTree = "<group>"; };
@@ -75,6 +74,7 @@
 		1AB984E31FD9AE41009B0BBB /* wireOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireOff.png; sourceTree = "<group>"; };
 		1AB984E41FD9AE41009B0BBB /* wireOn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wireOn.png; sourceTree = "<group>"; };
 		1AB984E51FD9AE41009B0BBB /* XORGate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = XORGate.png; sourceTree = "<group>"; };
+		1AB984F41FD9C933009B0BBB /* bulbOff.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bulbOff.png; sourceTree = "<group>"; };
 		1AC12F9F1FC7535200C67609 /* ELEC2660 Logic Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ELEC2660 Logic Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC12FA31FC7535200C67609 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1AC12FA51FC7535200C67609 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -142,8 +142,8 @@
 			children = (
 				1AB984D81FD9AE41009B0BBB /* ANDGate.png */,
 				1AB984D91FD9AE41009B0BBB /* Background texture.png */,
-				1AB984DA1FD9AE41009B0BBB /* bulbOff.png */,
 				1AB984DB1FD9AE41009B0BBB /* bulbOn.png */,
+				1AB984F41FD9C933009B0BBB /* bulbOff.png */,
 				1AB984DC1FD9AE41009B0BBB /* ButtonOff.png */,
 				1AB984DD1FD9AE41009B0BBB /* ButtonOn.png */,
 				1AB984DE1FD9AE41009B0BBB /* Logo.png */,
@@ -337,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AB984E71FD9AE41009B0BBB /* Background texture.png in Resources */,
+				1AB984F51FD9C933009B0BBB /* bulbOff.png in Resources */,
 				1AB984F01FD9AE41009B0BBB /* ORGate.png in Resources */,
 				1AB984EB1FD9AE41009B0BBB /* ButtonOn.png in Resources */,
 				1AB984E91FD9AE41009B0BBB /* bulbOn.png in Resources */,
@@ -346,7 +347,6 @@
 				1AB984EA1FD9AE41009B0BBB /* ButtonOff.png in Resources */,
 				1A7F1B551FD3103200B27E50 /* Blop.wav in Resources */,
 				1AB984E61FD9AE41009B0BBB /* ANDGate.png in Resources */,
-				1AB984E81FD9AE41009B0BBB /* bulbOff.png in Resources */,
 				1AB984EF1FD9AE41009B0BBB /* NOTGate.png in Resources */,
 				1AB984EC1FD9AE41009B0BBB /* Logo.png in Resources */,
 				1A7F1B591FD3144E00B27E50 /* Tone.wav in Resources */,
