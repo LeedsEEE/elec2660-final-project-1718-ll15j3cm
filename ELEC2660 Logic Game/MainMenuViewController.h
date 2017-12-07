@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainMenuViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UISlider *volumeSlider;
 
 - (IBAction)clearData:(UIButton *)sender;
 

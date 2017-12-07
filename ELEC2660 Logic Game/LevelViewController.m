@@ -34,14 +34,6 @@
                                                   alertControllerWithTitle:@"Level Tips"
                                                   message:self.level.informationText
                                                   preferredStyle:UIAlertControllerStyleAlert];
-            //create cancel button
-            UIAlertAction *cancelAction = [UIAlertAction
-                                           actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
-                                           style:UIAlertActionStyleCancel
-                                           handler:^(UIAlertAction *action)
-                                           {
-                                               NSLog(@"Cancel action");
-                                           }];
             //create ok button
             UIAlertAction *okAction = [UIAlertAction
                                        actionWithTitle:NSLocalizedString(@"OK", @"OK action")
@@ -51,7 +43,6 @@
                                            NSLog(@"OK action");
                                        }];
             //add buttons to controller
-            [alertController addAction:cancelAction];
             [alertController addAction:okAction];
             //create alert view
             [self playWhoosh];

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,15 +19,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Logiplex()" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-KP-mt2">
-                                <frame key="frameInset" minX="61" minY="28" width="253" height="59"/>
-                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="42"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background texture.png" translatesAutoresizingMaskIntoConstraints="NO" id="vtI-XL-ZkI"/>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-pW-bvy">
-                                <frame key="frameInset" minX="32" minY="539" width="313" height="30"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background texture.png" translatesAutoresizingMaskIntoConstraints="NO" id="vtI-XL-ZkI">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="199" id="0L4-bt-AgU"/>
+                                    <constraint firstAttribute="width" constant="199" id="gR0-lY-mkA"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuV-pW-bvy">
+                                <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="25"/>
                                 <state key="normal" title="Clear all save data">
                                     <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -35,13 +35,22 @@
                                     <action selector="clearData:" destination="9pv-A4-QxB" eventType="touchUpInside" id="Gfg-mo-yif"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logiplex()" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3J3-KP-mt2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="F7A-8g-RVZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="CourierNewPS-BoldMT" family="Courier New" pointSize="42"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.10022176057100296" green="0.51899605989456177" blue="0.22456544637680054" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.16751313209533691" green="0.4715198278427124" blue="0.087950356304645538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3J3-KP-mt2" firstAttribute="width" secondItem="tsR-hK-woN" secondAttribute="height" multiplier="11:29" id="JM0-Lf-67v"/>
                             <constraint firstItem="vtI-XL-ZkI" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="Nks-3I-Aq2"/>
                             <constraint firstItem="EuV-pW-bvy" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="XUH-DR-a6v"/>
                             <constraint firstItem="3J3-KP-mt2" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="8" id="XzR-vj-mv8"/>
-                            <constraint firstItem="EuV-pW-bvy" firstAttribute="top" secondItem="vtI-XL-ZkI" secondAttribute="bottom" constant="150" id="hfF-y4-Jo8"/>
+                            <constraint firstItem="EuV-pW-bvy" firstAttribute="top" secondItem="vtI-XL-ZkI" secondAttribute="bottom" constant="50" id="hfF-y4-Jo8"/>
                             <constraint firstItem="3J3-KP-mt2" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="iZm-Ju-vVO"/>
                             <constraint firstItem="vtI-XL-ZkI" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="vYj-jw-MkF"/>
                         </constraints>
@@ -69,7 +78,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4" y="1"/>
+            <point key="canvasLocation" x="-4" y="-430"/>
         </scene>
         <!--Level Select-->
         <scene sceneID="Ku0-fY-Gqk">
@@ -79,7 +88,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="separatorColor" red="0.0" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="separatorColor" red="0.16751313209533691" green="0.4715198278427124" blue="0.087950356304645538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LevelCell" textLabel="OhS-Bf-uRS" detailTextLabel="9AD-g4-Bxe" style="IBUITableViewCellStyleValue2" id="REz-mn-4Kl">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
@@ -103,8 +112,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" red="0.16751313209533691" green="0.4715198278427124" blue="0.087950356304645538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" red="0.1002217606" green="0.51899605989999997" blue="0.22456544640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.16751313209533691" green="0.4715198278427124" blue="0.087950356304645538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="HDx-L9-jjY" kind="push" identifier="levelSegue" id="Xd9-N4-b1A"/>
                                 </connections>
@@ -139,7 +149,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.1002217606" green="0.51899605989999997" blue="0.22456544640000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.16751313209533691" green="0.4715198278427124" blue="0.087950356304645538" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="1gq-cE-69e" firstAttribute="top" secondItem="qOh-uh-1Ff" secondAttribute="bottom" id="l5F-9Y-Idt"/>
                             <constraint firstItem="1gq-cE-69e" firstAttribute="centerX" secondItem="pTQ-eg-G9g" secondAttribute="centerX" id="nUO-5s-3gk"/>
@@ -158,7 +168,7 @@
         <scene sceneID="Mv2-g8-183">
             <objects>
                 <navigationController id="i3Z-i6-1jz" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Level Select" id="L5B-nq-fjb"/>
+                    <tabBarItem key="tabBarItem" title="Level Select" image="second" id="L5B-nq-fjb"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gwf-Z9-DDE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -175,5 +185,6 @@
     <resources>
         <image name="Background texture.png" width="100" height="100"/>
         <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
     </resources>
 </document>

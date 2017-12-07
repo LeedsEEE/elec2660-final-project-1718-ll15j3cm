@@ -420,9 +420,9 @@ Data model notes:
         level11.informationText = @"";
         level11.stars = 0;
         level11.taps = 0;
-        level11.oneStarTaps = 6;
-        level11.twoStarTaps = 4;
-        level11.threeStarTaps = 2;
+        level11.oneStarTaps = 7;
+        level11.twoStarTaps = 5;
+        level11.threeStarTaps = 3;
         level11.complete = false;
         
         //Level 12
@@ -490,10 +490,80 @@ Data model notes:
         level13.informationText = @"";
         level13.stars = 0;
         level13.taps = 0;
-        level13.oneStarTaps = 6;
-        level13.twoStarTaps = 4;
-        level13.threeStarTaps = 2;
+        level13.oneStarTaps = 7;
+        level13.twoStarTaps = 5;
+        level13.threeStarTaps = 3;
         level13.complete = false;
+        
+        //Level 14
+        self.levels = [NSMutableArray array];
+        Level *level14 = [[Level alloc] init];
+        level14.levelNumber = @14;
+        level14.levelName = @"Level 14";
+        //Pre defined and non-changable level layout
+        level14.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@9,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@5,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@3,@5,@3,@8,@3,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@3,@0,@0,
+                               @0,@3,@12,@3,@12,@3,@11,@3,@0,
+                               @0,@1,@0,@1,@0,@1,@0,@1,@0,nil];
+        level14.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level14.newInformation = false;
+        level14.informationText = @"";
+        level14.stars = 0;
+        level14.taps = 0;
+        level14.oneStarTaps = 6;
+        level14.twoStarTaps = 4;
+        level14.threeStarTaps = 2;
+        level14.complete = false;
+        
+        //Level 15
+        self.levels = [NSMutableArray array];
+        Level *level15 = [[Level alloc] init];
+        level15.levelNumber = @15;
+        level15.levelName = @"Level 15";
+        //Pre defined and non-changable level layout
+        level15.inputMatrix = [[NSMutableArray alloc] initWithObjects:
+                               @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                               @0,@0,@0,@0,@9,@0,@0,@0,@0,
+                               @0,@0,@0,@0,@3,@0,@0,@0,@0,
+                               @0,@0,@0,@3,@5,@3,@0,@0,@0,
+                               @0,@0,@0,@3,@0,@3,@0,@0,@0,
+                               @0,@0,@3,@12,@3,@5,@3,@0,@0,
+                               @0,@0,@3,@0,@3,@0,@3,@0,@0,
+                               @0,@3,@12,@3,@11,@3,@12,@3,@0,
+                               @0,@1,@0,@1,@0,@1,@0,@1,@0,nil];
+        level15.outputMatrix = [[NSMutableArray alloc] initWithObjects:
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0, //starts at index 0
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,
+                                @0,@0,@0,@0,@0,@0,@0,@0,@0,nil];
+        level15.newInformation = false;
+        level15.informationText = @"";
+        level15.stars = 0;
+        level15.taps = 0;
+        level15.oneStarTaps = 6;
+        level15.twoStarTaps = 4;
+        level15.threeStarTaps = 2;
+        level15.complete = false;
         
         //Add levels to data model
         [self.levels addObject:level1]; //index 0
@@ -509,6 +579,8 @@ Data model notes:
         [self.levels addObject:level11]; //index 10
         [self.levels addObject:level12]; //index 11
         [self.levels addObject:level13]; //index 12
+        [self.levels addObject:level14]; //index 13
+        [self.levels addObject:level15]; //index 14
     }
     return self;
 }
